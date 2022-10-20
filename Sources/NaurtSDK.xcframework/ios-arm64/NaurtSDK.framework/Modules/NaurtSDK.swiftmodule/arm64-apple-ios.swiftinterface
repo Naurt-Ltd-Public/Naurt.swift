@@ -1,0 +1,137 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NaurtSDK
+import Collections
+import Combine
+import CoreLocation
+import CoreMotion
+import Foundation
+import LASwift
+import Swift
+import UIKit
+import Zip
+import _Concurrency
+public enum NaurtTrackingStatus {
+  case FULL
+  case READY
+  case UNKNOWN
+  case AWAITING_VALIDATION
+  case FAILING_VALIDATION
+  case INVALID_API_KEY
+  public static func == (a: NaurtSDK.NaurtTrackingStatus, b: NaurtSDK.NaurtTrackingStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LogLevel {
+  case INFO
+  case WARNING
+  case ERROR
+  public static func == (a: NaurtSDK.LogLevel, b: NaurtSDK.LogLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
+final public class Naurt : Foundation.ObservableObject {
+  @Combine.Published @_projectedValueProperty($isInitialised) final public var isInitialised: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  final public var $isInitialised: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($isValidated) final public var isValidated: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  final public var $isValidated: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($isRunning) final public var isRunning: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  final public var $isRunning: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($naurtPoint) final public var naurtPoint: NaurtSDK.NaurtLocation? {
+    get
+    set
+    _modify
+  }
+  final public var $naurtPoint: Combine.Published<NaurtSDK.NaurtLocation?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($journeyUuid) final public var journeyUuid: Foundation.UUID? {
+    get
+    set
+    _modify
+  }
+  final public var $journeyUuid: Combine.Published<Foundation.UUID?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($trackingStatus) final public var trackingStatus: NaurtSDK.NaurtTrackingStatus {
+    get
+    set
+    _modify
+  }
+  final public var $trackingStatus: Combine.Published<NaurtSDK.NaurtTrackingStatus>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($locationPermission) final public var locationPermission: CoreLocation.CLAuthorizationStatus {
+    get
+    set
+    _modify
+  }
+  final public var $locationPermission: Combine.Published<CoreLocation.CLAuthorizationStatus>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init(apiKey: Swift.String)
+  final public func start()
+  final public func stop()
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct NaurtLocation {
+  public var timestamp: Swift.Double
+  public var longitude: Swift.Double
+  public var latitude: Swift.Double
+  public var altitude: Swift.Double
+  public var verticalAccuracy: Swift.Double
+  public var speed: Swift.Double
+  public var speedAccuracy: Swift.Double
+  public var course: Swift.Double
+  public var courseAccuracy: Swift.Double
+  public var horizontalAccuracy: Swift.Double
+  public var horizontalCovariance: Swift.Double
+  public func toString() -> Swift.String
+}
+public struct rawLocation {
+  public var latitude: Swift.Double
+  public var longitude: Swift.Double
+  public var timestamp: Swift.UInt64
+}
+extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
+extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
+extension NaurtSDK.LogLevel : Swift.Equatable {}
+extension NaurtSDK.LogLevel : Swift.Hashable {}
