@@ -29,7 +29,15 @@ dependencies: [
 
 ### Cocoapod
 
-Coming soon
+Add 
+
+```
+pod "Naurt.swift", "~> 0.0.1"
+```
+
+To your pod file.
+
+You will still need to manually add the dependency `swift-collections` to your project, since there is no Pod for that dependency yet
 
 ### Carthage
 
@@ -49,7 +57,7 @@ To use Naurt, it is reccomended to use a delegate, ensure it conforms to the `Na
 
 ## Documentation
 
-Coming soon
+Full docs can be found [here](https://docs.naurt.net/ios_sdk)
 
 ## Development 
 
