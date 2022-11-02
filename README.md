@@ -23,7 +23,7 @@ Add Naurt to your Swift project by adding
 
 ```
 dependencies: [
-    .package(url: "https://github.com/Naurt-Ltd-Public/Naurt.swift.git", from("0.0.1")),
+    .package(url: "https://github.com/Naurt-Ltd-Public/Naurt.swift.git", from("0.0.2")),
 ]
 ```
 
