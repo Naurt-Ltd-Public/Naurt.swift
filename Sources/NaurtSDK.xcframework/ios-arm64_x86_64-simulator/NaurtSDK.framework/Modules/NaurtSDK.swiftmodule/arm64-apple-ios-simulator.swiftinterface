@@ -57,6 +57,7 @@ final public class Naurt {
   final public var delegate: NaurtSDK.NaurtDelegate!
   public init(apiKey: Swift.String)
   final public func start()
+  final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
   final public func stop()
   @objc deinit
 }
@@ -79,6 +80,7 @@ public struct rawLocation {
   public var longitude: Swift.Double
   public var timestamp: Swift.UInt64
 }
+public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D, _ b: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
 extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
 extension NaurtSDK.LogLevel : Swift.Equatable {}

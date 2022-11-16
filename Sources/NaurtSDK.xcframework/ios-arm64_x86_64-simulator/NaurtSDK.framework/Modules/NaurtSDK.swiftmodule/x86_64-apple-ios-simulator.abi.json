@@ -1886,6 +1886,34 @@
           },
           {
             "kind": "Function",
+            "name": "distanceBetween",
+            "printedName": "distanceBetween(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocationCoordinate2D",
+                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "usr": "c:@S@CLLocationCoordinate2D"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK0A0C15distanceBetweenySdSo22CLLocationCoordinate2DVF",
+            "mangledName": "$s8NaurtSDK0A0C15distanceBetweenySdSo22CLLocationCoordinate2DVF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "stop",
             "printedName": "stop()",
             "children": [
@@ -3221,6 +3249,56 @@
       },
       {
         "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "NaurtSDK"
+      },
+      {
+        "kind": "Function",
+        "name": "distanceBetween",
+        "printedName": "distanceBetween(_:_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Double",
+            "printedName": "Swift.Double",
+            "usr": "s:Sd"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "CLLocationCoordinate2D",
+            "printedName": "CoreLocation.CLLocationCoordinate2D",
+            "usr": "c:@S@CLLocationCoordinate2D"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "CLLocationCoordinate2D",
+            "printedName": "CoreLocation.CLLocationCoordinate2D",
+            "usr": "c:@S@CLLocationCoordinate2D"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8NaurtSDK15distanceBetweenySdSo22CLLocationCoordinate2DV_ADtF",
+        "mangledName": "$s8NaurtSDK15distanceBetweenySdSo22CLLocationCoordinate2DV_ADtF",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -3687,28 +3765,28 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Utilities\/ReferenceFrames.swift",
       "kind": "FloatLiteral",
-      "offset": 103,
+      "offset": 104,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Utilities\/ReferenceFrames.swift",
       "kind": "FloatLiteral",
-      "offset": 109,
+      "offset": 110,
       "length": 13,
       "value": "298.257223563"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Utilities\/ReferenceFrames.swift",
       "kind": "FloatLiteral",
-      "offset": 280,
+      "offset": 281,
       "length": 22,
       "value": "0.00669437999014131699"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Utilities\/ReferenceFrames.swift",
       "kind": "FloatLiteral",
-      "offset": 341,
+      "offset": 342,
       "length": 9,
       "value": "6378137.0"
     },
