@@ -1,6 +1,6 @@
-Pod::Spec.new do |s|
+od::Spec.new do |s|
 	s.name = "Naurt.swift"
-	s.version = "0.0.2"
+	s.version = "0.0.3"
 	s.summary = "Naurt Swift SDK"
 	s.description = <<-DESC
 	Official Naurt framework for iOS development. Provides enchanced location tracking
@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
 	s.license = "Commercial"
 	s.swift_version = "5.0"
 
-	vdendored_frameworks = "Sources/NaurtSDK.xcframework"
+	s.vdendored_frameworks = "Sources/NaurtSDK.xcframework"
 end
