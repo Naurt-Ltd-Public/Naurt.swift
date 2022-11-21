@@ -1,4 +1,4 @@
-od::Spec.new do |s|
+Pod::Spec.new do |s|
 	s.name = "Naurt.swift"
 	s.version = "0.0.3"
 	s.summary = "Naurt Swift SDK"
@@ -7,6 +7,7 @@ od::Spec.new do |s|
 	DESC
 	s.homepage = "https://github.com/Naurt-Ltd-Public/Naurt.swift"
 	s.author = {"Nathaniel Curnick" => "nathaniel.c@naurt.com"}
+	s.platform              = :ios
 	s.ios.deployment_target = "13.4"
 	s.source = {:git => "https://github.com/Naurt-Ltd-Public/Naurt.swift.git", :tag => s.version.to_s}
 	s.dependency "Zip", "~> 2.1.2"
@@ -14,5 +15,5 @@ od::Spec.new do |s|
 	s.license = "Commercial"
 	s.swift_version = "5.0"
 
-	s.vdendored_frameworks = "Sources/NaurtSDK.xcframework"
+	s.vendored_frameworks = "Sources/NaurtSDK.xcframework"
 end
