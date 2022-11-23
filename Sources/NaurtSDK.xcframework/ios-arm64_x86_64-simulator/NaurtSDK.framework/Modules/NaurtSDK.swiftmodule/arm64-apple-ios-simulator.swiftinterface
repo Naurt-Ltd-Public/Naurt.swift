@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NaurtSDK
-import Collections
 import Combine
 import CoreLocation
 import CoreMotion
@@ -81,6 +80,22 @@ public struct rawLocation {
   public var timestamp: Swift.UInt64
 }
 public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D, _ b: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
+public class Pedestrian {
+  public var peakIndicies: [Swift.Int]
+  public var totalReadings: Swift.Int
+  public var thirdPreviousTime: Swift.Double
+  public var peakCounter: Swift.Int
+  public var totalDistance: Swift.Double
+  final public let distanceFromKalman: Swift.Double
+  final public let hkConstant: Swift.Double
+  public var firstPeakTime: Swift.Double
+  final public let calibrated: Swift.Bool
+  public var previousSpeed: Swift.Double
+  final public let lastSpeedTime: Swift.Double
+  public init()
+  public func newAccelerationReading(currentAbsAccel: Swift.Double, sensorTime: Swift.Double, lastGnssSpeed: Swift.Double, lastGnssSpeedTime: Swift.Double) -> Swift.Double?
+  @objc deinit
+}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
 extension NaurtSDK.LogLevel : Swift.Equatable {}

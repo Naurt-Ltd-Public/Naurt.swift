@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
 	s.source = {:git => "https://github.com/Naurt-Ltd-Public/Naurt.swift.git", :tag => s.version.to_s}
 	s.dependency "Zip", "~> 2.1.2"
 	s.dependency "LASwift", "~> 0.2.5"
+	s.dependency "SwiftCollections", "~> 0.2.0"
 	s.license = "Commercial"
 	s.swift_version = "5.0"
 
