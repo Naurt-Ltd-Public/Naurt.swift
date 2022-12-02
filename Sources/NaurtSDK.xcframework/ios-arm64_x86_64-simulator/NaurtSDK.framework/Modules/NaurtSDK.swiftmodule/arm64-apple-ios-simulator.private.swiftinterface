@@ -46,6 +46,7 @@ public protocol NaurtDelegate {
   func stop()
 }
 final public class Naurt {
+  final public let deviceUuid: Swift.String
   final public var locationPermission: CoreLocation.CLAuthorizationStatus
   final public var isInitialised: Swift.Bool
   final public var isValidated: Swift.Bool

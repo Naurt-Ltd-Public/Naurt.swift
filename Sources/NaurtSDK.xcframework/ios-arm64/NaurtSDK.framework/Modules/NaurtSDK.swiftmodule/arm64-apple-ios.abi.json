@@ -1000,6 +1000,55 @@
         "children": [
           {
             "kind": "Var",
+            "name": "deviceUuid",
+            "printedName": "deviceUuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8NaurtSDK0A0C10deviceUuidSSvp",
+            "mangledName": "$s8NaurtSDK0A0C10deviceUuidSSvp",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK0A0C10deviceUuidSSvg",
+                "mangledName": "$s8NaurtSDK0A0C10deviceUuidSSvg",
+                "moduleName": "NaurtSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "locationPermission",
             "printedName": "locationPermission",
             "children": [
