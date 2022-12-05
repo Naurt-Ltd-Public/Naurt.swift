@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = "Naurt.swift"
-	s.version = "0.0.6"
+	s.version = "0.0.7"
 	s.summary = "Naurt Swift SDK"
 	s.description = <<-DESC
 	Official Naurt framework for iOS development. Provides enchanced location tracking
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 	s.author = {"Nathaniel Curnick" => "nathaniel.c@naurt.com"}
 	s.platform              = :ios
 	s.ios.deployment_target = "13.4"
-	s.source = {:git => "https://github.com/Naurt-Ltd-Public/Naurt.swift.git", :tag => "0.0.5"}
+	s.source = {:git => "https://github.com/Naurt-Ltd-Public/Naurt.swift.git", :tag => "0.0.6"}
 	s.dependency "Zip", "~> 2.1.2"
 	s.dependency "LASwift", "~> 0.2.5"
 	s.license = "Commercial"
