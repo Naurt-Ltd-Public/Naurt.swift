@@ -54,7 +54,7 @@ final public class Naurt {
   final public var naurtPoint: NaurtSDK.NaurtLocation?
   final public var journeyUuid: Foundation.UUID?
   final public var trackingStatus: NaurtSDK.NaurtTrackingStatus
-  final public var delegate: NaurtSDK.NaurtDelegate!
+  final public var delegate: NaurtSDK.NaurtDelegate?
   public init(apiKey: Swift.String)
   final public func start()
   final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double

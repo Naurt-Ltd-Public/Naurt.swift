@@ -1772,7 +1772,7 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "ImplicitlyUnwrappedOptional",
+                "name": "Optional",
                 "printedName": "NaurtSDK.NaurtDelegate?",
                 "children": [
                   {
@@ -1804,7 +1804,7 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "ImplicitlyUnwrappedOptional",
+                    "name": "Optional",
                     "printedName": "NaurtSDK.NaurtDelegate?",
                     "children": [
                       {
@@ -1839,7 +1839,7 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "ImplicitlyUnwrappedOptional",
+                    "name": "Optional",
                     "printedName": "NaurtSDK.NaurtDelegate?",
                     "children": [
                       {
@@ -1929,7 +1929,8 @@
             "moduleName": "NaurtSDK",
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
