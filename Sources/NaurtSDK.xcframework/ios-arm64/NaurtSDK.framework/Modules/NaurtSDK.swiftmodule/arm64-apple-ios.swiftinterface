@@ -56,10 +56,29 @@ final public class Naurt {
   final public var trackingStatus: NaurtSDK.NaurtTrackingStatus
   final public var delegate: NaurtSDK.NaurtDelegate?
   public init(apiKey: Swift.String)
-  final public func start()
+  final public func start(customMetaData: Swift.String? = nil) throws
   final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
-  final public func stop()
+  final public func stop() throws
   @objc deinit
+}
+public enum StartNaurtError : Swift.Error {
+  case notInitialised
+  case alreadyRunning
+  case notValidated
+  case invalidJson
+  public static func == (a: NaurtSDK.StartNaurtError, b: NaurtSDK.StartNaurtError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum StopNaurtError : Swift.Error {
+  case notRunning
+  public static func == (a: NaurtSDK.StopNaurtError, b: NaurtSDK.StopNaurtError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public struct NaurtLocation {
   public var timestamp: Swift.Double
@@ -101,3 +120,7 @@ extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
 extension NaurtSDK.LogLevel : Swift.Equatable {}
 extension NaurtSDK.LogLevel : Swift.Hashable {}
+extension NaurtSDK.StartNaurtError : Swift.Equatable {}
+extension NaurtSDK.StartNaurtError : Swift.Hashable {}
+extension NaurtSDK.StopNaurtError : Swift.Equatable {}
+extension NaurtSDK.StopNaurtError : Swift.Hashable {}
