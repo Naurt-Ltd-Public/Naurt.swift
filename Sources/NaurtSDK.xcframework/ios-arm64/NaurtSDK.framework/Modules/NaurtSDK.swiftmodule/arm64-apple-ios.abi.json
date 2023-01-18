@@ -773,33 +773,6 @@
         "children": [
           {
             "kind": "Function",
-            "name": "didChangeInitialised",
-            "printedName": "didChangeInitialised(isInitialised:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:8NaurtSDK0A8DelegateP20didChangeInitialised02isF0ySb_tF",
-            "mangledName": "$s8NaurtSDK0A8DelegateP20didChangeInitialised02isF0ySb_tF",
-            "moduleName": "NaurtSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.NaurtDelegate>",
-            "sugared_genericSig": "<Self where Self : NaurtSDK.NaurtDelegate>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "didChangeValidated",
             "printedName": "didChangeValidated(isValidated:)",
             "children": [
@@ -1002,6 +975,430 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "LocationServiceDelegate",
+        "printedName": "LocationServiceDelegate",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "user",
+            "printedName": "user",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NaurtSDK.LocationServiceUser?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationServiceUser",
+                    "printedName": "NaurtSDK.LocationServiceUser",
+                    "usr": "s:8NaurtSDK19LocationServiceUserP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvp",
+            "mangledName": "$s8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvp",
+            "moduleName": "NaurtSDK",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NaurtSDK.LocationServiceUser?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocationServiceUser",
+                        "printedName": "NaurtSDK.LocationServiceUser",
+                        "usr": "s:8NaurtSDK19LocationServiceUserP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvg",
+                "mangledName": "$s8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvg",
+                "moduleName": "NaurtSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.LocationServiceDelegate>",
+                "sugared_genericSig": "<Self where Self : NaurtSDK.LocationServiceDelegate>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NaurtSDK.LocationServiceUser?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocationServiceUser",
+                        "printedName": "NaurtSDK.LocationServiceUser",
+                        "usr": "s:8NaurtSDK19LocationServiceUserP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvs",
+                "mangledName": "$s8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvs",
+                "moduleName": "NaurtSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.LocationServiceDelegate>",
+                "sugared_genericSig": "<Self where Self : NaurtSDK.LocationServiceDelegate>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvM",
+                "mangledName": "$s8NaurtSDK23LocationServiceDelegateP4userAA0cD4User_pSgvM",
+                "moduleName": "NaurtSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.LocationServiceDelegate>",
+                "sugared_genericSig": "<Self where Self : NaurtSDK.LocationServiceDelegate>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "startUpdatingLocation",
+            "printedName": "startUpdatingLocation()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK23LocationServiceDelegateP013startUpdatingC0yyF",
+            "mangledName": "$s8NaurtSDK23LocationServiceDelegateP013startUpdatingC0yyF",
+            "moduleName": "NaurtSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.LocationServiceDelegate>",
+            "sugared_genericSig": "<Self where Self : NaurtSDK.LocationServiceDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopUpdatingLocation",
+            "printedName": "stopUpdatingLocation()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK23LocationServiceDelegateP012stopUpdatingC0yyF",
+            "mangledName": "$s8NaurtSDK23LocationServiceDelegateP012stopUpdatingC0yyF",
+            "moduleName": "NaurtSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.LocationServiceDelegate>",
+            "sugared_genericSig": "<Self where Self : NaurtSDK.LocationServiceDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:8NaurtSDK23LocationServiceDelegateP",
+        "mangledName": "$s8NaurtSDK23LocationServiceDelegateP",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationServiceUser",
+        "printedName": "LocationServiceUser",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "newLocationServicePoint",
+            "printedName": "newLocationServicePoint(newLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK19LocationServiceUserP03newcD5Point0fC0ySo10CLLocationC_tF",
+            "mangledName": "$s8NaurtSDK19LocationServiceUserP03newcD5Point0fC0ySo10CLLocationC_tF",
+            "moduleName": "NaurtSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.LocationServiceUser>",
+            "sugared_genericSig": "<Self where Self : NaurtSDK.LocationServiceUser>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:8NaurtSDK19LocationServiceUserP",
+        "mangledName": "$s8NaurtSDK19LocationServiceUserP",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SensorServiceUser",
+        "printedName": "SensorServiceUser",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "newSensorServicePoint",
+            "printedName": "newSensorServicePoint(newMotion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MotionStruct",
+                "printedName": "NaurtSDK.MotionStruct",
+                "usr": "s:8NaurtSDK12MotionStructV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK17SensorServiceUserP03newcD5Point0F6MotionyAA0H6StructV_tF",
+            "mangledName": "$s8NaurtSDK17SensorServiceUserP03newcD5Point0F6MotionyAA0H6StructV_tF",
+            "moduleName": "NaurtSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.SensorServiceUser>",
+            "sugared_genericSig": "<Self where Self : NaurtSDK.SensorServiceUser>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:8NaurtSDK17SensorServiceUserP",
+        "mangledName": "$s8NaurtSDK17SensorServiceUserP",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SensorServiceDelegate",
+        "printedName": "SensorServiceDelegate",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "user",
+            "printedName": "user",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NaurtSDK.SensorServiceUser?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorServiceUser",
+                    "printedName": "NaurtSDK.SensorServiceUser",
+                    "usr": "s:8NaurtSDK17SensorServiceUserP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvp",
+            "mangledName": "$s8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvp",
+            "moduleName": "NaurtSDK",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NaurtSDK.SensorServiceUser?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorServiceUser",
+                        "printedName": "NaurtSDK.SensorServiceUser",
+                        "usr": "s:8NaurtSDK17SensorServiceUserP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvg",
+                "mangledName": "$s8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvg",
+                "moduleName": "NaurtSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.SensorServiceDelegate>",
+                "sugared_genericSig": "<Self where Self : NaurtSDK.SensorServiceDelegate>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "NaurtSDK.SensorServiceUser?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SensorServiceUser",
+                        "printedName": "NaurtSDK.SensorServiceUser",
+                        "usr": "s:8NaurtSDK17SensorServiceUserP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvs",
+                "mangledName": "$s8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvs",
+                "moduleName": "NaurtSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.SensorServiceDelegate>",
+                "sugared_genericSig": "<Self where Self : NaurtSDK.SensorServiceDelegate>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvM",
+                "mangledName": "$s8NaurtSDK21SensorServiceDelegateP4userAA0cD4User_pSgvM",
+                "moduleName": "NaurtSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.SensorServiceDelegate>",
+                "sugared_genericSig": "<Self where Self : NaurtSDK.SensorServiceDelegate>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "startUpdatingSensors",
+            "printedName": "startUpdatingSensors()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK21SensorServiceDelegateP20startUpdatingSensorsyyF",
+            "mangledName": "$s8NaurtSDK21SensorServiceDelegateP20startUpdatingSensorsyyF",
+            "moduleName": "NaurtSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.SensorServiceDelegate>",
+            "sugared_genericSig": "<Self where Self : NaurtSDK.SensorServiceDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopUpdatingSensors",
+            "printedName": "stopUpdatingSensors()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK21SensorServiceDelegateP19stopUpdatingSensorsyyF",
+            "mangledName": "$s8NaurtSDK21SensorServiceDelegateP19stopUpdatingSensorsyyF",
+            "moduleName": "NaurtSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.SensorServiceDelegate>",
+            "sugared_genericSig": "<Self where Self : NaurtSDK.SensorServiceDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:8NaurtSDK21SensorServiceDelegateP",
+        "mangledName": "$s8NaurtSDK21SensorServiceDelegateP",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "Naurt",
         "printedName": "Naurt",
         "children": [
@@ -1056,198 +1453,6 @@
           },
           {
             "kind": "Var",
-            "name": "locationPermission",
-            "printedName": "locationPermission",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CLAuthorizationStatus",
-                "printedName": "CoreLocation.CLAuthorizationStatus",
-                "usr": "c:@E@CLAuthorizationStatus"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvp",
-            "mangledName": "$s8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvp",
-            "moduleName": "NaurtSDK",
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CLAuthorizationStatus",
-                    "printedName": "CoreLocation.CLAuthorizationStatus",
-                    "usr": "c:@E@CLAuthorizationStatus"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvg",
-                "mangledName": "$s8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvg",
-                "moduleName": "NaurtSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CLAuthorizationStatus",
-                    "printedName": "CoreLocation.CLAuthorizationStatus",
-                    "usr": "c:@E@CLAuthorizationStatus"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvs",
-                "mangledName": "$s8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvs",
-                "moduleName": "NaurtSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvM",
-                "mangledName": "$s8NaurtSDK0A0C18locationPermissionSo21CLAuthorizationStatusVvM",
-                "moduleName": "NaurtSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "isInitialised",
-            "printedName": "isInitialised",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:8NaurtSDK0A0C13isInitialisedSbvp",
-            "mangledName": "$s8NaurtSDK0A0C13isInitialisedSbvp",
-            "moduleName": "NaurtSDK",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NaurtSDK0A0C13isInitialisedSbvg",
-                "mangledName": "$s8NaurtSDK0A0C13isInitialisedSbvg",
-                "moduleName": "NaurtSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NaurtSDK0A0C13isInitialisedSbvs",
-                "mangledName": "$s8NaurtSDK0A0C13isInitialisedSbvs",
-                "moduleName": "NaurtSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NaurtSDK0A0C13isInitialisedSbvM",
-                "mangledName": "$s8NaurtSDK0A0C13isInitialisedSbvM",
-                "moduleName": "NaurtSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "isValidated",
             "printedName": "isValidated",
             "children": [
@@ -1265,7 +1470,8 @@
             "declAttributes": [
               "Final",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1895,7 +2101,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(apiKey:)",
+            "printedName": "init(apiKey:locationService:sensorService:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1908,11 +2114,41 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NaurtSDK.LocationServiceDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationServiceDelegate",
+                    "printedName": "NaurtSDK.LocationServiceDelegate",
+                    "usr": "s:8NaurtSDK23LocationServiceDelegateP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NaurtSDK.SensorServiceDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SensorServiceDelegate",
+                    "printedName": "NaurtSDK.SensorServiceDelegate",
+                    "usr": "s:8NaurtSDK21SensorServiceDelegateP"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8NaurtSDK0A0C6apiKeyACSS_tcfc",
-            "mangledName": "$s8NaurtSDK0A0C6apiKeyACSS_tcfc",
+            "usr": "s:8NaurtSDK0A0C6apiKey15locationService06sensorF0ACSS_AA08LocationF8Delegate_pSgAA06SensorfI0_pSgtcfc",
+            "mangledName": "$s8NaurtSDK0A0C6apiKey15locationService06sensorF0ACSS_AA08LocationF8Delegate_pSgAA06SensorfI0_pSgtcfc",
             "moduleName": "NaurtSDK",
             "declAttributes": [
               "AccessControl"
@@ -1987,6 +2223,60 @@
           },
           {
             "kind": "Function",
+            "name": "newSensorServicePoint",
+            "printedName": "newSensorServicePoint(newMotion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MotionStruct",
+                "printedName": "NaurtSDK.MotionStruct",
+                "usr": "s:8NaurtSDK12MotionStructV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK0A0C21newSensorServicePoint0C6MotionyAA0G6StructV_tF",
+            "mangledName": "$s8NaurtSDK0A0C21newSensorServicePoint0C6MotionyAA0G6StructV_tF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "newLocationServicePoint",
+            "printedName": "newLocationServicePoint(newLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK0A0C23newLocationServicePoint0cD0ySo10CLLocationC_tF",
+            "mangledName": "$s8NaurtSDK0A0C23newLocationServicePoint0cD0ySo10CLLocationC_tF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "stop",
             "printedName": "stop()",
             "children": [
@@ -2016,6 +2306,22 @@
         "declAttributes": [
           "Final",
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "LocationServiceUser",
+            "printedName": "LocationServiceUser",
+            "usr": "s:8NaurtSDK19LocationServiceUserP",
+            "mangledName": "$s8NaurtSDK19LocationServiceUserP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SensorServiceUser",
+            "printedName": "SensorServiceUser",
+            "usr": "s:8NaurtSDK17SensorServiceUserP",
+            "mangledName": "$s8NaurtSDK17SensorServiceUserP"
+          }
         ]
       },
       {
@@ -2169,6 +2475,80 @@
             "declKind": "EnumElement",
             "usr": "s:8NaurtSDK05StartA5ErrorO11invalidJsonyA2CmF",
             "mangledName": "$s8NaurtSDK05StartA5ErrorO11invalidJsonyA2CmF",
+            "moduleName": "NaurtSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "noLocationService",
+            "printedName": "noLocationService",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NaurtSDK.StartNaurtError.Type) -> NaurtSDK.StartNaurtError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StartNaurtError",
+                    "printedName": "NaurtSDK.StartNaurtError",
+                    "usr": "s:8NaurtSDK05StartA5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NaurtSDK.StartNaurtError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StartNaurtError",
+                        "printedName": "NaurtSDK.StartNaurtError",
+                        "usr": "s:8NaurtSDK05StartA5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8NaurtSDK05StartA5ErrorO17noLocationServiceyA2CmF",
+            "mangledName": "$s8NaurtSDK05StartA5ErrorO17noLocationServiceyA2CmF",
+            "moduleName": "NaurtSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "noSensorService",
+            "printedName": "noSensorService",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NaurtSDK.StartNaurtError.Type) -> NaurtSDK.StartNaurtError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "StartNaurtError",
+                    "printedName": "NaurtSDK.StartNaurtError",
+                    "usr": "s:8NaurtSDK05StartA5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NaurtSDK.StartNaurtError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "StartNaurtError",
+                        "printedName": "NaurtSDK.StartNaurtError",
+                        "usr": "s:8NaurtSDK05StartA5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:8NaurtSDK05StartA5ErrorO15noSensorServiceyA2CmF",
+            "mangledName": "$s8NaurtSDK05StartA5ErrorO15noSensorServiceyA2CmF",
             "moduleName": "NaurtSDK"
           },
           {
@@ -2499,6 +2879,122 @@
         "printedName": "CoreMotion",
         "declKind": "Import",
         "moduleName": "NaurtSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MotionStruct",
+        "printedName": "MotionStruct",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(accel:gyro:mag:timeS:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MotionStruct",
+                "printedName": "NaurtSDK.MotionStruct",
+                "usr": "s:8NaurtSDK12MotionStructV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Double, Swift.Double, Swift.Double)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Double, Swift.Double, Swift.Double)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Double, Swift.Double, Swift.Double)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8NaurtSDK12MotionStructV5accel4gyro3mag5timeSACSd_S2dt_Sd_S2dtSd_S2dtSdtcfc",
+            "mangledName": "$s8NaurtSDK12MotionStructV5accel4gyro3mag5timeSACSd_S2dt_Sd_S2dtSd_S2dtSdtcfc",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8NaurtSDK12MotionStructV",
+        "mangledName": "$s8NaurtSDK12MotionStructV",
+        "moduleName": "NaurtSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
       },
       {
         "kind": "Import",
@@ -4971,37 +5467,44 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/LocationService.swift",
+      "kind": "StringLiteral",
+      "offset": 67,
+      "length": 15,
+      "value": "\"NaurtSDK.LocationService\""
+    },
+    {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "IntegerLiteral",
-      "offset": 1895,
+      "offset": 2305,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 2131,
+      "offset": 2541,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 2184,
+      "offset": 2594,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 12697,
+      "offset": 12671,
       "length": 5,
       "value": "\"sdk\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/SensorService.swift",
       "kind": "FloatLiteral",
-      "offset": 2988,
+      "offset": 3252,
       "length": 3,
       "value": "0.2"
     },

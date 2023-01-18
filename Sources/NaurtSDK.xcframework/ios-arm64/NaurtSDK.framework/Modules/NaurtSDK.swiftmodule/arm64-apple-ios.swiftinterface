@@ -36,7 +36,6 @@ public enum LogLevel {
 }
 public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
 public protocol NaurtDelegate {
-  func didChangeInitialised(isInitialised: Swift.Bool)
   func didChangeValidated(isValidated: Swift.Bool)
   func didChangeRunning(isRunning: Swift.Bool)
   func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
@@ -45,19 +44,35 @@ public protocol NaurtDelegate {
   func start()
   func stop()
 }
-final public class Naurt {
+public protocol LocationServiceDelegate {
+  var user: NaurtSDK.LocationServiceUser? { get set }
+  func startUpdatingLocation()
+  func stopUpdatingLocation()
+}
+public protocol LocationServiceUser {
+  func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
+}
+public protocol SensorServiceUser {
+  func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
+}
+public protocol SensorServiceDelegate {
+  var user: NaurtSDK.SensorServiceUser? { get set }
+  func startUpdatingSensors()
+  func stopUpdatingSensors()
+}
+final public class Naurt : NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceUser {
   final public let deviceUuid: Swift.String
-  final public var locationPermission: CoreLocation.CLAuthorizationStatus
-  final public var isInitialised: Swift.Bool
   final public var isValidated: Swift.Bool
   final public var isRunning: Swift.Bool
   final public var naurtPoint: NaurtSDK.NaurtLocation?
   final public var journeyUuid: Foundation.UUID?
   final public var trackingStatus: NaurtSDK.NaurtTrackingStatus
   final public var delegate: NaurtSDK.NaurtDelegate?
-  public init(apiKey: Swift.String)
+  public init(apiKey: Swift.String, locationService: NaurtSDK.LocationServiceDelegate? = nil, sensorService: NaurtSDK.SensorServiceDelegate? = nil)
   final public func start(customMetaData: Swift.String? = nil) throws
   final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
+  final public func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
+  final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
   final public func stop() throws
   @objc deinit
 }
@@ -66,6 +81,8 @@ public enum StartNaurtError : Swift.Error {
   case alreadyRunning
   case notValidated
   case invalidJson
+  case noLocationService
+  case noSensorService
   public static func == (a: NaurtSDK.StartNaurtError, b: NaurtSDK.StartNaurtError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -79,6 +96,9 @@ public enum StopNaurtError : Swift.Error {
   public var hashValue: Swift.Int {
     get
   }
+}
+public struct MotionStruct {
+  public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double), timeS: Swift.Double)
 }
 public struct NaurtLocation {
   public var timestamp: Swift.Double
