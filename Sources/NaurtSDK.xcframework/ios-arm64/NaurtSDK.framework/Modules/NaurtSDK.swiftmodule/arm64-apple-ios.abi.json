@@ -2101,7 +2101,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(apiKey:locationService:sensorService:)",
+            "printedName": "init(apiKey:locationService:sensorService:noServices:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2144,11 +2144,18 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8NaurtSDK0A0C6apiKey15locationService06sensorF0ACSS_AA08LocationF8Delegate_pSgAA06SensorfI0_pSgtcfc",
-            "mangledName": "$s8NaurtSDK0A0C6apiKey15locationService06sensorF0ACSS_AA08LocationF8Delegate_pSgAA06SensorfI0_pSgtcfc",
+            "usr": "s:8NaurtSDK0A0C6apiKey15locationService06sensorF010noServicesACSS_AA08LocationF8Delegate_pSgAA06SensorfK0_pSgSbtcfc",
+            "mangledName": "$s8NaurtSDK0A0C6apiKey15locationService06sensorF010noServicesACSS_AA08LocationF8Delegate_pSgAA06SensorfK0_pSgSbtcfc",
             "moduleName": "NaurtSDK",
             "declAttributes": [
               "AccessControl"
@@ -2250,6 +2257,33 @@
           },
           {
             "kind": "Function",
+            "name": "newSensorPoint",
+            "printedName": "newSensorPoint(newMotion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MotionStruct",
+                "printedName": "NaurtSDK.MotionStruct",
+                "usr": "s:8NaurtSDK12MotionStructV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK0A0C14newSensorPoint0C6MotionyAA0F6StructV_tF",
+            "mangledName": "$s8NaurtSDK0A0C14newSensorPoint0C6MotionyAA0F6StructV_tF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "newLocationServicePoint",
             "printedName": "newLocationServicePoint(newLocation:)",
             "children": [
@@ -2268,6 +2302,33 @@
             "declKind": "Func",
             "usr": "s:8NaurtSDK0A0C23newLocationServicePoint0cD0ySo10CLLocationC_tF",
             "mangledName": "$s8NaurtSDK0A0C23newLocationServicePoint0cD0ySo10CLLocationC_tF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "newLocationPoint",
+            "printedName": "newLocationPoint(newLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK0A0C16newLocationPoint0cD0ySo10CLLocationC_tF",
+            "mangledName": "$s8NaurtSDK0A0C16newLocationPoint0cD0ySo10CLLocationC_tF",
             "moduleName": "NaurtSDK",
             "declAttributes": [
               "Final",
@@ -5482,22 +5543,36 @@
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2433,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 2541,
+      "offset": 2586,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 2594,
+      "offset": 2639,
       "length": 3,
       "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2795,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 12671,
+      "offset": 13263,
       "length": 5,
       "value": "\"sdk\""
     },

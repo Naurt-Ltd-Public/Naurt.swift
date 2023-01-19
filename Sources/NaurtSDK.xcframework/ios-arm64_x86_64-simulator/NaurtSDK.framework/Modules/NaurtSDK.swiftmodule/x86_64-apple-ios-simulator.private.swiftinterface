@@ -68,11 +68,13 @@ final public class Naurt : NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceU
   final public var journeyUuid: Foundation.UUID?
   final public var trackingStatus: NaurtSDK.NaurtTrackingStatus
   final public var delegate: NaurtSDK.NaurtDelegate?
-  public init(apiKey: Swift.String, locationService: NaurtSDK.LocationServiceDelegate? = nil, sensorService: NaurtSDK.SensorServiceDelegate? = nil)
+  public init(apiKey: Swift.String, locationService: NaurtSDK.LocationServiceDelegate? = nil, sensorService: NaurtSDK.SensorServiceDelegate? = nil, noServices: Swift.Bool = false)
   final public func start(customMetaData: Swift.String? = nil) throws
   final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
   final public func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
+  final public func newSensorPoint(newMotion: NaurtSDK.MotionStruct)
   final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
+  final public func newLocationPoint(newLocation: CoreLocation.CLLocation)
   final public func stop() throws
   @objc deinit
 }
