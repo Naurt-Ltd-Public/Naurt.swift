@@ -5,6 +5,7 @@ import Combine
 import CoreLocation
 import CoreMotion
 import Foundation
+import GenericJSON
 import LASwift
 import Swift
 import UIKit
@@ -37,12 +38,15 @@ public enum LogLevel {
 public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
 public protocol NaurtDelegate {
   func didChangeValidated(isValidated: Swift.Bool)
-  func didChangeRunning(isRunning: Swift.Bool)
+  func didChangeAnalyticsSession(isInSession: Swift.Bool)
   func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
-  func didChangeJourneyUuid(journeyUuid: Foundation.UUID?)
-  func didChangeStatus(trackingStatus: NaurtSDK.NaurtTrackingStatus)
-  func start()
-  func stop()
+  func didChangeJourneyUuid(journeyUuid: Foundation.UUID)
+  func didEnterGeofence(id: Foundation.UUID)
+  func startAnalyticsSession(metadata: Swift.Encodable, geofences: [NaurtSDK.Geofence]?)
+  func endAnalyticsSession()
+  func newPoi(poi: Swift.Encodable)
+  func errorStream(error: NaurtSDK.NaurtError)
+  func onAppClose()
 }
 public protocol LocationServiceDelegate {
   var user: NaurtSDK.LocationServiceUser? { get set }
@@ -62,29 +66,40 @@ public protocol SensorServiceDelegate {
 }
 final public class Naurt : NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceUser {
   final public let deviceUuid: Swift.String
-  final public var isValidated: Swift.Bool
-  final public var isRunning: Swift.Bool
-  final public var naurtPoint: NaurtSDK.NaurtLocation?
-  final public var journeyUuid: Foundation.UUID?
-  final public var trackingStatus: NaurtSDK.NaurtTrackingStatus
   final public var delegate: NaurtSDK.NaurtDelegate?
-  public init(apiKey: Swift.String, locationService: NaurtSDK.LocationServiceDelegate? = nil, sensorService: NaurtSDK.SensorServiceDelegate? = nil, noServices: Swift.Bool = false)
-  final public func start(customMetaData: Swift.String? = nil) throws
-  final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
-  final public func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
-  final public func newSensorPoint(newMotion: NaurtSDK.MotionStruct)
+  public init(apiKey: Swift.String, noServices: Swift.Bool = false) throws
   final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
-  final public func newLocationPoint(newLocation: CoreLocation.CLLocation)
-  final public func stop() throws
+  final public func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
+  final public func startAnalyticsSession(metadata: Swift.Encodable, geofences: [NaurtSDK.Geofence]? = nil) throws
+  final public func endAnalyticsSession() throws
+  final public func onAppClose()
+  final public func pointOfInterest(metadata: Swift.Encodable) throws
+  final public func getIsValidated() -> Swift.Bool
+  final public func getIsInSession() -> Swift.Bool
+  final public func getNaurtLocation() -> NaurtSDK.NaurtLocation?
+  final public func getJourneyUUID() -> Foundation.UUID?
+  final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
   @objc deinit
 }
+public enum InitNaurtError : Swift.Error {
+  case fileSystem
+  case couldNotCreateFirstJourney
+  case unknown
+  public static func == (a: NaurtSDK.InitNaurtError, b: NaurtSDK.InitNaurtError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public enum StartNaurtError : Swift.Error {
-  case notInitialised
-  case alreadyRunning
+  case alreadyInAnalyticsSession
+  case notInAnalyticsSession
   case notValidated
   case invalidJson
   case noLocationService
   case noSensorService
+  case unknown
+  case fileSystem
   public static func == (a: NaurtSDK.StartNaurtError, b: NaurtSDK.StartNaurtError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -93,16 +108,36 @@ public enum StartNaurtError : Swift.Error {
 }
 public enum StopNaurtError : Swift.Error {
   case notRunning
+  case uknown
   public static func == (a: NaurtSDK.StopNaurtError, b: NaurtSDK.StopNaurtError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
+public enum PoiError : Swift.Error {
+  case notValidated
+  case invalidJson
+  public static func == (a: NaurtSDK.PoiError, b: NaurtSDK.PoiError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Geofence : Swift.Identifiable {
+  public let id: Foundation.UUID
+  public let coordinate: CoreLocation.CLLocationCoordinate2D
+  public let alertDistance: Swift.Double
+  public typealias ID = Foundation.UUID
+}
+public enum NaurtError : Swift.Error {
+  case fileWriteErrors(Swift.String)
+  case savePoiErrors(Swift.String)
+}
 public struct MotionStruct {
   public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double), timeS: Swift.Double)
 }
-public struct NaurtLocation {
+public struct NaurtLocation : Swift.Codable {
   public var timestamp: Swift.Double
   public var longitude: Swift.Double
   public var latitude: Swift.Double
@@ -114,7 +149,21 @@ public struct NaurtLocation {
   public var courseAccuracy: Swift.Double
   public var horizontalAccuracy: Swift.Double
   public var horizontalCovariance: Swift.Double
+  public var source: NaurtSDK.Source
   public func toString() -> Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum Source : Swift.String, Swift.Codable {
+  case NaurtFull
+  case NaurtSensor
+  case Gnss
+  case Unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 public struct rawLocation {
   public var latitude: Swift.Double
@@ -142,7 +191,14 @@ extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
 extension NaurtSDK.LogLevel : Swift.Equatable {}
 extension NaurtSDK.LogLevel : Swift.Hashable {}
+extension NaurtSDK.InitNaurtError : Swift.Equatable {}
+extension NaurtSDK.InitNaurtError : Swift.Hashable {}
 extension NaurtSDK.StartNaurtError : Swift.Equatable {}
 extension NaurtSDK.StartNaurtError : Swift.Hashable {}
 extension NaurtSDK.StopNaurtError : Swift.Equatable {}
 extension NaurtSDK.StopNaurtError : Swift.Hashable {}
+extension NaurtSDK.PoiError : Swift.Equatable {}
+extension NaurtSDK.PoiError : Swift.Hashable {}
+extension NaurtSDK.Source : Swift.Equatable {}
+extension NaurtSDK.Source : Swift.Hashable {}
+extension NaurtSDK.Source : Swift.RawRepresentable {}
