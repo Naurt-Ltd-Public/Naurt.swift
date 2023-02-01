@@ -42,9 +42,9 @@ public protocol NaurtDelegate {
   func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
   func didChangeJourneyUuid(journeyUuid: Foundation.UUID)
   func didEnterGeofence(id: Foundation.UUID)
-  func startAnalyticsSession(metadata: Swift.Encodable, geofences: [NaurtSDK.Geofence]?)
-  func endAnalyticsSession()
-  func newPoi(poi: Swift.Encodable)
+  func startAnalyticsSession(metadata: Swift.Encodable, geofences: [NaurtSDK.Geofence]?) throws
+  func endAnalyticsSession() throws
+  func newPoi(poi: Swift.Encodable) throws
   func errorStream(error: NaurtSDK.NaurtError)
   func onAppClose()
 }
@@ -171,22 +171,6 @@ public struct rawLocation {
   public var timestamp: Swift.UInt64
 }
 public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D, _ b: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
-public class Pedestrian {
-  public var peakIndicies: [Swift.Int]
-  public var totalReadings: Swift.Int
-  public var thirdPreviousTime: Swift.Double
-  public var peakCounter: Swift.Int
-  public var totalDistance: Swift.Double
-  final public let distanceFromKalman: Swift.Double
-  final public let hkConstant: Swift.Double
-  public var firstPeakTime: Swift.Double
-  final public let calibrated: Swift.Bool
-  public var previousSpeed: Swift.Double
-  final public let lastSpeedTime: Swift.Double
-  public init()
-  public func newAccelerationReading(currentAbsAccel: Swift.Double, sensorTime: Swift.Double, lastGnssSpeed: Swift.Double, lastGnssSpeedTime: Swift.Double) -> Swift.Double?
-  @objc deinit
-}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
 extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
 extension NaurtSDK.LogLevel : Swift.Equatable {}
