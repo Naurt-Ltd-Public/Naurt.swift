@@ -5771,131 +5771,131 @@
       "kind": "StringLiteral",
       "offset": 236,
       "length": 71,
-      "value": "\"https:\/\/zagxm7olgcwqmvy6vwljqmsgzi0ejjei.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/xlpe23jdh6tvpvxr372qzbpjru0cayqu.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 357,
+      "offset": 365,
       "length": 71,
-      "value": "\"https:\/\/fn6mctf4ns44r63m4m6bluoita0pktzx.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/2u6monipslouyxz2p3ofpmdbta0vackw.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 474,
+      "offset": 490,
       "length": 71,
-      "value": "\"https:\/\/3nhjhwzclw7c4twyhqppnwy2qe0xaljp.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/36bk6ypkgemuarz5tgoneyplzm0hwsld.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 593,
+      "offset": 617,
       "length": 71,
-      "value": "\"https:\/\/csvbtdqpdozjktezrq37dgyq5a0fbgjq.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/355xttwgttpgsh5rrfsec4jq6m0rggxx.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 708,
+      "offset": 740,
       "length": 71,
-      "value": "\"https:\/\/pxu6zr3iwccsrjsbiun6hhk2da0efdkp.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/6r26zfayawhtxf7ixqxambfx7i0nixhb.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5686,
+      "offset": 5726,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5741,
+      "offset": 5781,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5787,
+      "offset": 5827,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7036,
+      "offset": 7076,
       "length": 5,
       "value": "\"sdk\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7128,
+      "offset": 7168,
       "length": 35,
       "value": "\"naurt-lambda-ios-analytics-bucket\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7188,
+      "offset": 7228,
       "length": 17,
       "value": "\"application\/zip\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7232,
+      "offset": 7272,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7385,
+      "offset": 7425,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7440,
+      "offset": 7480,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7486,
+      "offset": 7526,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8573,
+      "offset": 8613,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8579,
+      "offset": 8619,
       "length": 3,
       "value": "299"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8982,
+      "offset": 9022,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9113,
+      "offset": 9153,
       "length": 3,
       "value": "202"
     },
