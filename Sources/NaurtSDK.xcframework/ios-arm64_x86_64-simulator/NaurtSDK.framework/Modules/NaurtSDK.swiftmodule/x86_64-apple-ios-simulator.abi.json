@@ -4322,6 +4322,78 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "setEmissionFrequency",
+            "printedName": "setEmissionFrequency(frequency:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NaurtSDK@objc(cs)Naurt(im)setEmissionFrequencyWithFrequency:",
+            "mangledName": "$s8NaurtSDK0A0C20setEmissionFrequency9frequencyySo8NSNumberCSg_tF",
+            "moduleName": "NaurtSDK",
+            "objc_name": "setEmissionFrequencyWithFrequency:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setEmissionFrequency",
+            "printedName": "setEmissionFrequency(frequency:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8NaurtSDK0A0C20setEmissionFrequency9frequencyySdSg_tF",
+            "mangledName": "$s8NaurtSDK0A0C20setEmissionFrequency9frequencyySdSg_tF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -6717,18 +6789,24 @@
           {
             "kind": "Function",
             "name": "toString",
-            "printedName": "toString()",
+            "printedName": "toString(published:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:8NaurtSDK0A8LocationC8toStringSSyF",
-            "mangledName": "$s8NaurtSDK0A8LocationC8toStringSSyF",
+            "usr": "s:8NaurtSDK0A8LocationC8toString9publishedSSSb_tF",
+            "mangledName": "$s8NaurtSDK0A8LocationC8toString9publishedSSSb_tF",
             "moduleName": "NaurtSDK",
             "declAttributes": [
               "AccessControl"
@@ -8091,27 +8169,27 @@
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/FileHelper.swift",
       "kind": "StringLiteral",
       "offset": 728,
-      "length": 173,
-      "value": "\"Timestamp_s,Lat,Lon,Speed_ms,Altitude_m,Course_deg,Horizontal_accuracy_m,Speed_accuracy_ms,Vertical_accuracy_m,Course_accuracy_deg,Horizontal_covariance_m2,Source,Motion\n\""
+      "length": 181,
+      "value": "\"Timestamp_s,Lat,Lon,Speed_ms,Altitude_m,Course_deg,Horizontal_accuracy_m,Speed_accuracy_ms,Vertical_accuracy_m,Course_accuracy_deg,Horizontal_covariance_m2,Source,Motion,emitted\n\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/FileHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 1011,
+      "offset": 1019,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/FileHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 1116,
+      "offset": 1124,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/FileHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 1122,
+      "offset": 1130,
       "length": 1,
       "value": "0"
     },
@@ -8167,21 +8245,21 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "BooleanLiteral",
-      "offset": 3566,
+      "offset": 3676,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 3595,
+      "offset": 3705,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 3627,
+      "offset": 3737,
       "length": 5,
       "value": "100.0"
     },
@@ -8195,28 +8273,28 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 24769,
+      "offset": 25803,
       "length": 5,
       "value": "\"sdk\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 28561,
+      "offset": 29595,
       "length": 12,
       "value": "\"NaurtSDK.AnomalyAlert\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 28895,
+      "offset": 29929,
       "length": 15,
       "value": "\"NaurtSDK.TemporalAnomaly\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 29276,
+      "offset": 30310,
       "length": 14,
       "value": "\"NaurtSDK.SpacialAnomaly\""
     },
@@ -8244,28 +8322,28 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Structs.swift",
       "kind": "IntegerLiteral",
-      "offset": 2989,
+      "offset": 3017,
       "length": 11,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Structs.swift",
       "kind": "IntegerLiteral",
-      "offset": 3011,
+      "offset": 3039,
       "length": 4,
       "value": "2"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Structs.swift",
       "kind": "IntegerLiteral",
-      "offset": 2989,
+      "offset": 3017,
       "length": 11,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Structs.swift",
       "kind": "IntegerLiteral",
-      "offset": 3011,
+      "offset": 3039,
       "length": 4,
       "value": "2"
     },
