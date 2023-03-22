@@ -165,6 +165,7 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   @objc final public func getIsInSession() -> Swift.Bool
   @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation?
   @objc final public func getJourneyUUID() -> Swift.String
+  @objc final public func getDeviceUUID() -> Swift.String
   @objc final public func distanceBetween(_ a: NaurtSDK.Location2D) -> Swift.Double
   @objc final public func setEmissionFrequency(frequency: Foundation.NSNumber?)
   final public func setEmissionFrequency(frequency: Swift.Double?)
