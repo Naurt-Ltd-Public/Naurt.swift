@@ -12,16 +12,90 @@ import UIKit
 import Zip
 import _Concurrency
 import _StringProcessing
-public enum NaurtTrackingStatus {
-  case FULL
-  case READY
-  case UNKNOWN
-  case AWAITING_VALIDATION
-  case FAILING_VALIDATION
-  case INVALID_API_KEY
-  public static func == (a: NaurtSDK.NaurtTrackingStatus, b: NaurtSDK.NaurtTrackingStatus) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+@objc public enum NaurtMovement : Swift.Int, Swift.Codable {
+  case na = 0
+  case stationary = 1
+  case onFoot = 2
+  case vehicleMotion = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum InitNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case fileSystem = 0
+  case couldNotCreateFirstJourney = 1
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum StartNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case alreadyInAnalyticsSession = 0
+  case notValidated = 1
+  case invalidJson = 2
+  case noLocationService = 3
+  case noSensorService = 4
+  case fileSystem = 5
+  case geofencingRequested = 6
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum StopNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case notRunning = 0
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case notValidated = 0
+  case invalidJson = 1
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -36,108 +110,89 @@ public enum LogLevel {
   }
 }
 public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
-public protocol NaurtDelegate {
-  func didChangeValidated(isValidated: Swift.Bool)
-  func didChangeAnalyticsSession(isInSession: Swift.Bool)
-  func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
-  func didChangeJourneyUuid(journeyUuid: Foundation.UUID)
-  func didEnterGeofence(id: Foundation.UUID)
-  func startAnalyticsSession(metadata: Swift.Encodable, geofences: [NaurtSDK.Geofence]?) throws
-  func endAnalyticsSession() throws
-  func newPoi(poi: Swift.Encodable) throws
-  func errorStream(error: NaurtSDK.NaurtError)
-  func onAppClose()
-}
-public protocol LocationServiceDelegate {
-  var user: NaurtSDK.LocationServiceUser? { get set }
-  func startUpdatingLocation()
-  func stopUpdatingLocation()
-}
-public protocol LocationServiceUser {
-  func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
-}
-public protocol SensorServiceUser {
-  func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
-}
-public protocol SensorServiceDelegate {
-  var user: NaurtSDK.SensorServiceUser? { get set }
-  func startUpdatingSensors()
-  func stopUpdatingSensors()
-}
-final public class Naurt : NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceUser {
-  final public let deviceUuid: Swift.String
-  final public var delegate: NaurtSDK.NaurtDelegate?
-  public init(apiKey: Swift.String, noServices: Swift.Bool = false) throws
-  final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
-  final public func newSensorServicePoint(newMotion: NaurtSDK.MotionStruct)
-  final public func startAnalyticsSession(metadata: Swift.Encodable, geofences: [NaurtSDK.Geofence]? = nil) throws
-  final public func endAnalyticsSession() throws
-  final public func onAppClose()
-  final public func pointOfInterest(metadata: Swift.Encodable) throws
-  final public func getIsValidated() -> Swift.Bool
-  final public func getIsInSession() -> Swift.Bool
-  final public func getNaurtLocation() -> NaurtSDK.NaurtLocation?
-  final public func getJourneyUUID() -> Foundation.UUID?
-  final public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
+@objc public class Geofence : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let coordinate: NaurtSDK.Location2D
+  final public let alertDistance: Swift.Double
+  public init(id: Swift.String, coordinate: NaurtSDK.Location2D, alertDistance: Swift.Double)
   @objc deinit
 }
-public enum InitNaurtError : Swift.Error {
-  case fileSystem
-  case couldNotCreateFirstJourney
-  case unknown
-  public static func == (a: NaurtSDK.InitNaurtError, b: NaurtSDK.InitNaurtError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+@objc public class Location2D : ObjectiveC.NSObject {
+  final public let latitude: Swift.Double
+  final public let longitude: Swift.Double
+  public init(latitude: Swift.Double, longitude: Swift.Double)
+  @objc deinit
 }
-public enum StartNaurtError : Swift.Error {
-  case alreadyInAnalyticsSession
-  case notInAnalyticsSession
-  case notValidated
-  case invalidJson
-  case noLocationService
-  case noSensorService
-  case unknown
-  case fileSystem
-  public static func == (a: NaurtSDK.StartNaurtError, b: NaurtSDK.StartNaurtError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+@objc public protocol NaurtDelegate : ObjectiveC.NSObject {
+  @objc func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
+  @objc func onAppClose()
+  @objc optional func didChangeValidated(isValidated: Swift.Bool)
+  @objc optional func didChangeAnalyticsSession(isInSession: Swift.Bool)
+  @objc optional func didChangeJourneyUuid(journeyUuid: Swift.String)
+  @objc optional func didEnterGeofence(id: Swift.String)
+  @objc optional func didLeaveGeofence(id: Swift.String)
+  @objc optional func startAnalyticsSession(metadata: Foundation.NSDictionary, geofences: [NaurtSDK.Geofence]?) throws
+  @objc optional func endAnalyticsSession() throws
+  @objc optional func newPoi(poi: Foundation.NSDictionary) throws
+  @objc optional func anomalyAltert(alert: NaurtSDK.AnomalyAlert)
 }
-public enum StopNaurtError : Swift.Error {
-  case notRunning
-  case uknown
-  public static func == (a: NaurtSDK.StopNaurtError, b: NaurtSDK.StopNaurtError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+@objc public protocol LocationServiceDelegate {
+  @objc var user: NaurtSDK.LocationServiceUser? { get set }
+  @objc func startUpdatingLocation()
+  @objc func stopUpdatingLocation()
 }
-public enum PoiError : Swift.Error {
-  case notValidated
-  case invalidJson
-  public static func == (a: NaurtSDK.PoiError, b: NaurtSDK.PoiError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+@objc public protocol LocationServiceUser {
+  @objc func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
 }
-public struct Geofence : Swift.Identifiable {
-  public let id: Foundation.UUID
-  public let coordinate: CoreLocation.CLLocationCoordinate2D
-  public let alertDistance: Swift.Double
-  public typealias ID = Foundation.UUID
+@objc public protocol SensorServiceUser {
+  @objc func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
 }
-public enum NaurtError : Swift.Error {
-  case fileWriteErrors(Swift.String)
-  case savePoiErrors(Swift.String)
+@objc public protocol SensorServiceDelegate {
+  @objc var user: NaurtSDK.SensorServiceUser? { get set }
+  @objc func startUpdatingSensors()
+  @objc func stopUpdatingSensors()
 }
-public struct MotionStruct {
+@objc final public class Naurt : ObjectiveC.NSObject, NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceUser {
+  @objc final public var delegate: NaurtSDK.NaurtDelegate?
+  @objc public init(apiKey: Swift.String, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0) throws
+  @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
+  @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
+  @objc final public func startAnalyticsSession(metadata: Foundation.NSDictionary, geofences: [NaurtSDK.Geofence]? = nil) throws
+  @objc final public func endAnalyticsSession() throws
+  @objc final public func onAppClose()
+  @objc final public func pointOfInterest(metadata: Foundation.NSDictionary) throws
+  @objc final public func getIsValidated() -> Swift.Bool
+  @objc final public func getIsInSession() -> Swift.Bool
+  @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation?
+  @objc final public func getJourneyUUID() -> Swift.String
+  @objc final public func distanceBetween(_ a: NaurtSDK.Location2D) -> Swift.Double
+  @objc deinit
+}
+@objc public class AnomalyAlert : ObjectiveC.NSObject {
+  final public let temporalAnomaly: NaurtSDK.TemporalAnomaly?
+  final public let spatialAnomaly: NaurtSDK.SpacialAnomaly?
+  public init(temporalAnomaly: NaurtSDK.TemporalAnomaly?, spatialAnomaly: NaurtSDK.SpacialAnomaly?)
+  @objc deinit
+}
+@objc public class TemporalAnomaly : ObjectiveC.NSObject {
+  final public let lastTime: Swift.Double
+  final public let thisTime: Swift.Double
+  final public let timeDelta: Swift.Double
+  public init(lastTime: Swift.Double, thisTime: Swift.Double, timeDelta: Swift.Double)
+  @objc deinit
+}
+@objc public class SpacialAnomaly : ObjectiveC.NSObject {
+  final public let lastPosition: NaurtSDK.Location2D
+  final public let thisPosition: NaurtSDK.Location2D
+  final public let distanceDelta: Swift.Double
+  public init(lastPosition: NaurtSDK.Location2D, thisPosition: NaurtSDK.Location2D, distanceDelta: Swift.Double)
+  @objc deinit
+}
+@objc public class MotionContainer : ObjectiveC.NSObject {
   public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double), timeS: Swift.Double)
+  @objc deinit
 }
-public struct NaurtLocation : Swift.Codable {
+@objc public class NaurtLocation : ObjectiveC.NSObject, Swift.Codable {
   public var timestamp: Swift.Double
   public var longitude: Swift.Double
   public var latitude: Swift.Double
@@ -150,39 +205,51 @@ public struct NaurtLocation : Swift.Codable {
   public var horizontalAccuracy: Swift.Double
   public var horizontalCovariance: Swift.Double
   public var source: NaurtSDK.Source
+  public var motionType: NaurtSDK.NaurtMovement
+  public init(timestamp: Swift.Double, longitude: Swift.Double, latitude: Swift.Double, altitude: Swift.Double, verticalAccuracy: Swift.Double, speed: Swift.Double, speedAccuracy: Swift.Double, course: Swift.Double, courseAccuracy: Swift.Double, horizontalAccuracy: Swift.Double, horizontalCovariance: Swift.Double, source: NaurtSDK.Source, motionType: NaurtSDK.NaurtMovement)
   public func toString() -> Swift.String
+  @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
-public enum Source : Swift.String, Swift.Codable {
+@objc public enum Source : Swift.Int {
   case NaurtFull
   case NaurtSensor
   case Gnss
-  case Unknown
   public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
+}
+extension NaurtSDK.Source : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct rawLocation {
   public var latitude: Swift.Double
   public var longitude: Swift.Double
   public var timestamp: Swift.UInt64
 }
-public func distanceBetween(_ a: CoreLocation.CLLocationCoordinate2D, _ b: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
-extension NaurtSDK.NaurtTrackingStatus : Swift.Equatable {}
-extension NaurtSDK.NaurtTrackingStatus : Swift.Hashable {}
-extension NaurtSDK.LogLevel : Swift.Equatable {}
-extension NaurtSDK.LogLevel : Swift.Hashable {}
+public func distanceBetween(_ a: NaurtSDK.Location2D, _ b: NaurtSDK.Location2D) -> Swift.Double
+extension NaurtSDK.NaurtMovement : Swift.Equatable {}
+extension NaurtSDK.NaurtMovement : Swift.Hashable {}
+extension NaurtSDK.NaurtMovement : Swift.RawRepresentable {}
 extension NaurtSDK.InitNaurtError : Swift.Equatable {}
 extension NaurtSDK.InitNaurtError : Swift.Hashable {}
+extension NaurtSDK.InitNaurtError : Swift.RawRepresentable {}
 extension NaurtSDK.StartNaurtError : Swift.Equatable {}
 extension NaurtSDK.StartNaurtError : Swift.Hashable {}
+extension NaurtSDK.StartNaurtError : Swift.RawRepresentable {}
 extension NaurtSDK.StopNaurtError : Swift.Equatable {}
 extension NaurtSDK.StopNaurtError : Swift.Hashable {}
+extension NaurtSDK.StopNaurtError : Swift.RawRepresentable {}
 extension NaurtSDK.PoiError : Swift.Equatable {}
 extension NaurtSDK.PoiError : Swift.Hashable {}
+extension NaurtSDK.PoiError : Swift.RawRepresentable {}
+extension NaurtSDK.LogLevel : Swift.Equatable {}
+extension NaurtSDK.LogLevel : Swift.Hashable {}
 extension NaurtSDK.Source : Swift.Equatable {}
 extension NaurtSDK.Source : Swift.Hashable {}
 extension NaurtSDK.Source : Swift.RawRepresentable {}
