@@ -123,7 +123,7 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   public init(latitude: Swift.Double, longitude: Swift.Double)
   @objc deinit
 }
-@objc public protocol NaurtDelegate : ObjectiveC.NSObject {
+@objc public protocol NaurtDelegate {
   @objc func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
   @objc func onAppClose()
   @objc optional func didChangeValidated(isValidated: Swift.Bool)
