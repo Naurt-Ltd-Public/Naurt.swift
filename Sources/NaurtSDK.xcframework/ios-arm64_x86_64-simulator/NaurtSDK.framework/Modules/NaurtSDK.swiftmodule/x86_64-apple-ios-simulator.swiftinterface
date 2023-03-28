@@ -134,7 +134,7 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   @objc optional func startAnalyticsSession(metadata: Foundation.NSDictionary, geofences: [NaurtSDK.Geofence]?) throws
   @objc optional func endAnalyticsSession() throws
   @objc optional func newPoi(poi: Foundation.NSDictionary) throws
-  @objc optional func anomalyAltert(alert: NaurtSDK.AnomalyAlert)
+  @objc optional func anomalyAlert(alert: NaurtSDK.AnomalyAlert)
 }
 @objc public protocol LocationServiceDelegate {
   @objc var user: NaurtSDK.LocationServiceUser? { get set }
@@ -192,7 +192,7 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   @objc deinit
 }
 @objc public class MotionContainer : ObjectiveC.NSObject {
-  public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double), timeS: Swift.Double)
+  public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double)?, timeS: Swift.Double)
   @objc deinit
 }
 @objc public class NaurtLocation : ObjectiveC.NSObject, Swift.Codable {

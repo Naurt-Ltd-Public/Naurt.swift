@@ -3347,8 +3347,8 @@
           },
           {
             "kind": "Function",
-            "name": "anomalyAltert",
-            "printedName": "anomalyAltert(alert:)",
+            "name": "anomalyAlert",
+            "printedName": "anomalyAlert(alert:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3363,13 +3363,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@NaurtSDK@objc(pl)NaurtDelegate(im)anomalyAltertWithAlert:",
-            "mangledName": "$s8NaurtSDK0A8DelegateP13anomalyAltert5alertyAA12AnomalyAlertC_tF",
+            "usr": "c:@M@NaurtSDK@objc(pl)NaurtDelegate(im)anomalyAlertWithAlert:",
+            "mangledName": "$s8NaurtSDK0A8DelegateP12anomalyAlert5alertyAA07AnomalyE0C_tF",
             "moduleName": "NaurtSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : NaurtSDK.NaurtDelegate>",
             "sugared_genericSig": "<Self where Self : NaurtSDK.NaurtDelegate>",
             "protocolReq": true,
-            "objc_name": "anomalyAltertWithAlert:",
+            "objc_name": "anomalyAlertWithAlert:",
             "declAttributes": [
               "Optional",
               "ObjC"
@@ -5449,28 +5449,36 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Tuple",
-                "printedName": "(Swift.Double, Swift.Double, Swift.Double)",
+                "name": "Optional",
+                "printedName": "(Swift.Double, Swift.Double, Swift.Double)?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
+                    "name": "Tuple",
+                    "printedName": "(Swift.Double, Swift.Double, Swift.Double)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ]
                   }
-                ]
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -5480,8 +5488,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8NaurtSDK15MotionContainerC5accel4gyro3mag5timeSACSd_S2dt_Sd_S2dtSd_S2dtSdtcfc",
-            "mangledName": "$s8NaurtSDK15MotionContainerC5accel4gyro3mag5timeSACSd_S2dt_Sd_S2dtSd_S2dtSdtcfc",
+            "usr": "s:8NaurtSDK15MotionContainerC5accel4gyro3mag5timeSACSd_S2dt_Sd_S2dtSd_S2dtSgSdtcfc",
+            "mangledName": "$s8NaurtSDK15MotionContainerC5accel4gyro3mag5timeSACSd_S2dt_Sd_S2dtSd_S2dtSgSdtcfc",
             "moduleName": "NaurtSDK",
             "declAttributes": [
               "AccessControl"
@@ -8240,84 +8248,84 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "IntegerLiteral",
-      "offset": 2888,
+      "offset": 2887,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "BooleanLiteral",
-      "offset": 3016,
+      "offset": 3015,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 3169,
+      "offset": 3168,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 3222,
+      "offset": 3221,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "BooleanLiteral",
-      "offset": 3655,
+      "offset": 3760,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 3684,
+      "offset": 3789,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 3716,
+      "offset": 3821,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 1429,
+      "offset": 1428,
       "length": 5,
       "value": "\"NaurtSDK.Naurt\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 25958,
+      "offset": 26951,
       "length": 5,
       "value": "\"sdk\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 29750,
+      "offset": 30743,
       "length": 12,
       "value": "\"NaurtSDK.AnomalyAlert\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 30084,
+      "offset": 31077,
       "length": 15,
       "value": "\"NaurtSDK.TemporalAnomaly\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 30465,
+      "offset": 31458,
       "length": 14,
       "value": "\"NaurtSDK.SpacialAnomaly\""
     },
@@ -8331,7 +8339,7 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/SensorService.swift",
       "kind": "FloatLiteral",
-      "offset": 3201,
+      "offset": 3580,
       "length": 3,
       "value": "0.2"
     },
@@ -8375,7 +8383,7 @@
       "kind": "StringLiteral",
       "offset": 271,
       "length": 71,
-      "value": "\"https:\/\/xlpe23jdh6tvpvxr372qzbpjru0cayqu.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/kn6khmi5niiw5osqg2kfhklfm40rqrlf.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
@@ -8408,112 +8416,112 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5565,
+      "offset": 6091,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 5592,
+      "offset": 6118,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5924,
+      "offset": 6450,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5979,
+      "offset": 6505,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 6025,
+      "offset": 6551,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7265,
+      "offset": 7791,
       "length": 5,
       "value": "\"sdk\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7357,
+      "offset": 7883,
       "length": 35,
       "value": "\"naurt-lambda-ios-analytics-bucket\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7417,
+      "offset": 7943,
       "length": 17,
       "value": "\"application\/zip\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7461,
+      "offset": 7987,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7614,
+      "offset": 8140,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7669,
+      "offset": 8195,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 7715,
+      "offset": 8241,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8742,
+      "offset": 9268,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 8748,
+      "offset": 9274,
       "length": 3,
       "value": "299"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9151,
+      "offset": 9677,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/Sources\/NaurtSDK\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9282,
+      "offset": 9808,
       "length": 3,
       "value": "202"
     },
