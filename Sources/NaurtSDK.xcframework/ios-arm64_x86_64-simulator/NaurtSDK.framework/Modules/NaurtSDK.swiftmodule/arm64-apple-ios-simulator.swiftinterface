@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NaurtSDK
 import Combine
 import CoreLocation
@@ -9,7 +9,7 @@ import GenericJSON
 import LASwift
 import Swift
 import UIKit
-import Zip
+import ZIPFoundation
 import _Concurrency
 import _StringProcessing
 @objc public enum NaurtMovement : Swift.Int, Swift.Codable {
@@ -137,7 +137,7 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   @objc optional func anomalyAlert(alert: NaurtSDK.AnomalyAlert)
 }
 @objc public protocol LocationServiceDelegate {
-  @objc var user: NaurtSDK.LocationServiceUser? { get set }
+  @objc var user: (any NaurtSDK.LocationServiceUser)? { get set }
   @objc func startUpdatingLocation()
   @objc func stopUpdatingLocation()
 }
@@ -148,12 +148,12 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   @objc func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
 }
 @objc public protocol SensorServiceDelegate {
-  @objc var user: NaurtSDK.SensorServiceUser? { get set }
+  @objc var user: (any NaurtSDK.SensorServiceUser)? { get set }
   @objc func startUpdatingSensors()
   @objc func stopUpdatingSensors()
 }
 @objc final public class Naurt : ObjectiveC.NSObject, NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceUser {
-  @objc final public var delegate: NaurtSDK.NaurtDelegate?
+  @objc final public var delegate: (any NaurtSDK.NaurtDelegate)?
   @objc public init(apiKey: Swift.String, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0) throws
   @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
   @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
@@ -212,8 +212,8 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   public init(timestamp: Swift.Double, longitude: Swift.Double, latitude: Swift.Double, altitude: Swift.Double, verticalAccuracy: Swift.Double, speed: Swift.Double, speedAccuracy: Swift.Double, course: Swift.Double, courseAccuracy: Swift.Double, horizontalAccuracy: Swift.Double, horizontalCovariance: Swift.Double, source: NaurtSDK.Source, motionType: NaurtSDK.NaurtMovement)
   public func toString(published: Swift.Bool) -> Swift.String
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum Source : Swift.Int {
   case NaurtFull
@@ -227,8 +227,8 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   }
 }
 extension NaurtSDK.Source : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct rawLocation {
   public var latitude: Swift.Double
