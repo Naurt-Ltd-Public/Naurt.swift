@@ -12,6 +12,25 @@ import UIKit
 import ZIPFoundation
 import _Concurrency
 import _StringProcessing
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnomalyAlert : ObjectiveC.NSObject {
+  public var temporalAnomaly: NaurtSDK.TemporalAnomaly?
+  public var spatialAnomaly: NaurtSDK.SpacialAnomaly?
+  @objc deinit
+}
+@objc public class TemporalAnomaly : ObjectiveC.NSObject {
+  final public let lastTime: Swift.Double
+  final public let thisTime: Swift.Double
+  final public let timeDelta: Swift.Double
+  public init(lastTime: Swift.Double, thisTime: Swift.Double, timeDelta: Swift.Double)
+  @objc deinit
+}
+@objc public class SpacialAnomaly : ObjectiveC.NSObject {
+  final public let lastPosition: NaurtSDK.Location2D
+  final public let thisPosition: NaurtSDK.Location2D
+  final public let distanceDelta: Swift.Double
+  public init(lastPosition: NaurtSDK.Location2D, thisPosition: NaurtSDK.Location2D, distanceDelta: Swift.Double)
+  @objc deinit
+}
 @objc public enum NaurtMovement : Swift.Int, Swift.Codable {
   case na = 0
   case stationary = 1
@@ -41,35 +60,15 @@ import _StringProcessing
     get
   }
 }
-@objc public enum StartNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case alreadyInAnalyticsSession = 0
-  case notValidated = 1
-  case invalidJson = 2
-  case noLocationService = 3
-  case noSensorService = 4
-  case fileSystem = 5
-  case geofencingRequested = 6
+@objc public enum UpdateMetadataError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case invalidJson = 0
+  case noLocationService = 1
+  case noSensorService = 2
+  case fileSystem = 3
   public var errorUserInfo: [Swift.String : Any] {
     get
   }
   public var errorDescription: Swift.String? {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public enum StopNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case notRunning = 0
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var localizedDescription: Swift.String {
     get
   }
   public init?(rawValue: Swift.Int)
@@ -99,17 +98,6 @@ import _StringProcessing
     get
   }
 }
-public enum LogLevel {
-  case INFO
-  case WARNING
-  case ERROR
-  public static func == (a: NaurtSDK.LogLevel, b: NaurtSDK.LogLevel) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
 @objc public class Geofence : ObjectiveC.NSObject {
   final public let id: Swift.String
   final public let coordinate: NaurtSDK.Location2D
@@ -123,18 +111,32 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   public init(latitude: Swift.Double, longitude: Swift.Double)
   @objc deinit
 }
+@objc final public class Naurt : ObjectiveC.NSObject {
+  @objc final public var delegate: (any NaurtSDK.NaurtDelegate)?
+  @objc public init(apiKey: Swift.String, metadata: Foundation.NSDictionary?, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0) throws
+  @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
+  @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
+  @objc final public func updateGeofences(geo: [NaurtSDK.Geofence])
+  @objc final public func updateMetadata(metadata: Foundation.NSDictionary?) throws
+  @objc final public func onAppClose()
+  @objc final public func pointOfInterest(metadata: Foundation.NSDictionary) throws
+  @objc final public func getIsValidated() -> Swift.Bool
+  @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation
+  @objc final public func getJourneyUUID() -> Swift.String
+  @objc final public func getDeviceUUID() -> Swift.String
+  @objc final public func distanceBetween(_ a: NaurtSDK.Location2D) -> Swift.Double
+  @objc final public func setEmissionFrequency(frequency: Foundation.NSNumber?)
+  final public func setEmissionFrequency(_ frequency: Swift.Double?)
+  @objc deinit
+}
 @objc public protocol NaurtDelegate {
-  @objc func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation?)
+  @objc func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation)
   @objc func onAppClose()
   @objc optional func didChangeValidated(isValidated: Swift.Bool)
-  @objc optional func didChangeAnalyticsSession(isInSession: Swift.Bool)
-  @objc optional func didChangeJourneyUuid(journeyUuid: Swift.String)
   @objc optional func didEnterGeofence(id: Swift.String)
   @objc optional func didLeaveGeofence(id: Swift.String)
-  @objc optional func startAnalyticsSession(metadata: Foundation.NSDictionary, geofences: [NaurtSDK.Geofence]?) throws
-  @objc optional func endAnalyticsSession() throws
-  @objc optional func newPoi(poi: Foundation.NSDictionary) throws
   @objc optional func anomalyAlert(alert: NaurtSDK.AnomalyAlert)
+  @objc optional func errorStream(errorInformation: Swift.String)
 }
 @objc public protocol LocationServiceDelegate {
   @objc var user: (any NaurtSDK.LocationServiceUser)? { get set }
@@ -151,45 +153,6 @@ public func logLevelToString(logLevel: NaurtSDK.LogLevel) -> Swift.String
   @objc var user: (any NaurtSDK.SensorServiceUser)? { get set }
   @objc func startUpdatingSensors()
   @objc func stopUpdatingSensors()
-}
-@objc final public class Naurt : ObjectiveC.NSObject, NaurtSDK.LocationServiceUser, NaurtSDK.SensorServiceUser {
-  @objc final public var delegate: (any NaurtSDK.NaurtDelegate)?
-  @objc public init(apiKey: Swift.String, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0) throws
-  @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
-  @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
-  @objc final public func startAnalyticsSession(metadata: Foundation.NSDictionary, geofences: [NaurtSDK.Geofence]? = nil) throws
-  @objc final public func endAnalyticsSession() throws
-  @objc final public func onAppClose()
-  @objc final public func pointOfInterest(metadata: Foundation.NSDictionary) throws
-  @objc final public func getIsValidated() -> Swift.Bool
-  @objc final public func getIsInSession() -> Swift.Bool
-  @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation?
-  @objc final public func getJourneyUUID() -> Swift.String
-  @objc final public func getDeviceUUID() -> Swift.String
-  @objc final public func distanceBetween(_ a: NaurtSDK.Location2D) -> Swift.Double
-  @objc final public func setEmissionFrequency(frequency: Foundation.NSNumber?)
-  final public func setEmissionFrequency(frequency: Swift.Double?)
-  @objc deinit
-}
-@objc public class AnomalyAlert : ObjectiveC.NSObject {
-  final public let temporalAnomaly: NaurtSDK.TemporalAnomaly?
-  final public let spatialAnomaly: NaurtSDK.SpacialAnomaly?
-  public init(temporalAnomaly: NaurtSDK.TemporalAnomaly?, spatialAnomaly: NaurtSDK.SpacialAnomaly?)
-  @objc deinit
-}
-@objc public class TemporalAnomaly : ObjectiveC.NSObject {
-  final public let lastTime: Swift.Double
-  final public let thisTime: Swift.Double
-  final public let timeDelta: Swift.Double
-  public init(lastTime: Swift.Double, thisTime: Swift.Double, timeDelta: Swift.Double)
-  @objc deinit
-}
-@objc public class SpacialAnomaly : ObjectiveC.NSObject {
-  final public let lastPosition: NaurtSDK.Location2D
-  final public let thisPosition: NaurtSDK.Location2D
-  final public let distanceDelta: Swift.Double
-  public init(lastPosition: NaurtSDK.Location2D, thisPosition: NaurtSDK.Location2D, distanceDelta: Swift.Double)
-  @objc deinit
 }
 @objc public class MotionContainer : ObjectiveC.NSObject {
   public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double)?, timeS: Swift.Double)
@@ -242,17 +205,12 @@ extension NaurtSDK.NaurtMovement : Swift.RawRepresentable {}
 extension NaurtSDK.InitNaurtError : Swift.Equatable {}
 extension NaurtSDK.InitNaurtError : Swift.Hashable {}
 extension NaurtSDK.InitNaurtError : Swift.RawRepresentable {}
-extension NaurtSDK.StartNaurtError : Swift.Equatable {}
-extension NaurtSDK.StartNaurtError : Swift.Hashable {}
-extension NaurtSDK.StartNaurtError : Swift.RawRepresentable {}
-extension NaurtSDK.StopNaurtError : Swift.Equatable {}
-extension NaurtSDK.StopNaurtError : Swift.Hashable {}
-extension NaurtSDK.StopNaurtError : Swift.RawRepresentable {}
+extension NaurtSDK.UpdateMetadataError : Swift.Equatable {}
+extension NaurtSDK.UpdateMetadataError : Swift.Hashable {}
+extension NaurtSDK.UpdateMetadataError : Swift.RawRepresentable {}
 extension NaurtSDK.PoiError : Swift.Equatable {}
 extension NaurtSDK.PoiError : Swift.Hashable {}
 extension NaurtSDK.PoiError : Swift.RawRepresentable {}
-extension NaurtSDK.LogLevel : Swift.Equatable {}
-extension NaurtSDK.LogLevel : Swift.Hashable {}
 extension NaurtSDK.Source : Swift.Equatable {}
 extension NaurtSDK.Source : Swift.Hashable {}
 extension NaurtSDK.Source : Swift.RawRepresentable {}
