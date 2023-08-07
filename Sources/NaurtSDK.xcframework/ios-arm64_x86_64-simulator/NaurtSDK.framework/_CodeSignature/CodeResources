@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NaurtSDK-Swift.h</key>
 		<data>
-		vEnpbrULuchvksQEMT1Prp+bKIA=
+		zjru30AADvAxOOMpeH7n2us7sZM=
 		</data>
 		<key>Headers/NaurtSDK.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		TZ/FADad6V+RZZpaDOw0ij3D1I8=
+		3sZGGmPhS5zcOLt+yPyixSf8Uq4=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		VxgyZ+qp0g4zLKQ/3WITsTqFBEQ=
+		daoXOsHqxZXGaVGPy6NqBOW8pNk=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		VxgyZ+qp0g4zLKQ/3WITsTqFBEQ=
+		daoXOsHqxZXGaVGPy6NqBOW8pNk=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		m7X4MJyLbD9XoIft2w9fUx3osYM=
+		ugz2NZLftZLcqSiOq+V9Hzl1ZiA=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		TZ/FADad6V+RZZpaDOw0ij3D1I8=
+		3sZGGmPhS5zcOLt+yPyixSf8Uq4=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		12lnoz5Ra8NgK0ENxJxk/S36BoU=
+		R76XJLYGrse+acih9D+AHq+XYdI=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		12lnoz5Ra8NgK0ENxJxk/S36BoU=
+		R76XJLYGrse+acih9D+AHq+XYdI=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ojE62pLaE6Gi4OpgCOOwMgNqfIM=
+		1mgE+MxfGLUg9RBaY9ze3sbbxkA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bzSUj5H96/sF9Kp1UUuZJKyZlTBj6ZB1mgqZ7YXBX3w=
+			nNVLDITmaXdpUwftxboSVRKeIfvWhhoZ+4atGxNJBCI=
 			</data>
 		</dict>
 		<key>Headers/NaurtSDK.h</key>
@@ -81,14 +81,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ixb5OTkV8zAUkN7D9s+9JQZtG4gQoOh0SCdPBHCSalY=
+			1K6p8d9sHBx58EDuhbC24mNWdKVbqIdQmU+J9xz/BkM=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ou4bNr0TDtjBI83zEJgt8+1sKFpkWqI54+g02+7502k=
+			01QWOQAECzvfe3oEVQ1fylK+BnjhTFjlRwei5796aVg=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -102,28 +102,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ou4bNr0TDtjBI83zEJgt8+1sKFpkWqI54+g02+7502k=
+			01QWOQAECzvfe3oEVQ1fylK+BnjhTFjlRwei5796aVg=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			orKZaXWev4KHDlsA5VsRLSFrhL6FdFYHugGiuS1jpZU=
+			om2jJB9SdNrBJbiDF2fGVBIoBNG9Pti1pREXs0Tdx+k=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ixb5OTkV8zAUkN7D9s+9JQZtG4gQoOh0SCdPBHCSalY=
+			1K6p8d9sHBx58EDuhbC24mNWdKVbqIdQmU+J9xz/BkM=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3lZXfvi5ov78kxsMqMWF/m6W5P+46rY6dKCprJrgr+s=
+			H/POXD/1LEvaDszb2DbY4JvAr34y+7GPDPglGGjpDtw=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -137,14 +137,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3lZXfvi5ov78kxsMqMWF/m6W5P+46rY6dKCprJrgr+s=
+			H/POXD/1LEvaDszb2DbY4JvAr34y+7GPDPglGGjpDtw=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xnK4b78DOH+ec2aAIe04Ia6mVunNKPzWtAaW7WQAWfU=
+			BjnhJ7m9ce8DJkw5iCzboTvWygM61VoMaFpvGzmWzOk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

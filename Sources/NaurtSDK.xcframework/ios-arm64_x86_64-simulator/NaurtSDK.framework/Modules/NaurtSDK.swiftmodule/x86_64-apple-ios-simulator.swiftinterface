@@ -15,7 +15,10 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import simd
-@_hasMissingDesignatedInitializers public class POI {
+@objc public class POIManager : ObjectiveC.NSObject {
+  public init(apiKey: Swift.String)
+  public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping (Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func getPoi(latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distance_filter: Swift.Double?, completion: @escaping (Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   @objc deinit
 }
 @objc public enum Movement : Swift.Int {
@@ -93,13 +96,13 @@ infix operator .* : MultiplicationPrecedence
   @objc func startUpdatingSensors()
   @objc func stopUpdatingSensors()
 }
-@objc final public class Naurt : ObjectiveC.NSObject {
+@objc final public class NaurtLocationManager : ObjectiveC.NSObject {
   @objc final public var delegate: (any NaurtSDK.NaurtDelegate)?
-  @objc public init(apiKey: Swift.String, metadata: Foundation.NSDictionary? = nil, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0) throws
+  @objc public init(apiKey: Swift.String, metadata: Foundation.NSDictionary? = nil, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0)
   @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
   @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
   @objc final public func updateGeofences(geo: [NaurtSDK.Geofence])
-  @objc final public func updateMetadata(metadata: Foundation.NSDictionary?) throws
+  @objc final public func updateMetadata(metadata: Foundation.NSDictionary?)
   @objc final public func onAppClose()
   @objc final public func getIsValidated() -> Swift.Bool
   @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation
@@ -158,48 +161,10 @@ public struct rawLocation {
   public var longitude: Swift.Double
   public var timestamp: Swift.UInt64
 }
-@objc public enum InitNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case fileSystem = 0
-  case couldNotCreateFirstJourney = 1
-  case keyChain = 2
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public enum UpdateMetadataError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case invalidJson = 0
-  case noLocationService = 1
-  case noSensorService = 2
-  case fileSystem = 3
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var errorDescription: Swift.String? {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case notValidated = 0
-  case invalidJson = 1
+  case invalidJson = 0
+  case maxRetries = 1
+  case unknown = 2
   public var errorUserInfo: [Swift.String : Any] {
     get
   }
@@ -228,12 +193,6 @@ extension NaurtSDK.Source : Swift.RawRepresentable {}
 extension NaurtSDK.GeofenceActivityType : Swift.Equatable {}
 extension NaurtSDK.GeofenceActivityType : Swift.Hashable {}
 extension NaurtSDK.GeofenceActivityType : Swift.RawRepresentable {}
-extension NaurtSDK.InitNaurtError : Swift.Equatable {}
-extension NaurtSDK.InitNaurtError : Swift.Hashable {}
-extension NaurtSDK.InitNaurtError : Swift.RawRepresentable {}
-extension NaurtSDK.UpdateMetadataError : Swift.Equatable {}
-extension NaurtSDK.UpdateMetadataError : Swift.Hashable {}
-extension NaurtSDK.UpdateMetadataError : Swift.RawRepresentable {}
 extension NaurtSDK.PoiError : Swift.Equatable {}
 extension NaurtSDK.PoiError : Swift.Hashable {}
 extension NaurtSDK.PoiError : Swift.RawRepresentable {}

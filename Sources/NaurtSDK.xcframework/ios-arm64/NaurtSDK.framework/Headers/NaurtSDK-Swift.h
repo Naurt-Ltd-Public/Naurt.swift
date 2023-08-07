@@ -301,13 +301,6 @@ typedef SWIFT_ENUM(NSInteger, GeofenceActivityType, open) {
   GeofenceActivityTypeLeave = 1,
 };
 
-typedef SWIFT_ENUM(NSInteger, InitNaurtError, open) {
-  InitNaurtErrorFileSystem = 0,
-  InitNaurtErrorCouldNotCreateFirstJourney = 1,
-  InitNaurtErrorKeyChain = 2,
-};
-static NSString * _Nonnull const InitNaurtErrorDomain = @"NaurtSDK.InitNaurtError";
-
 
 SWIFT_CLASS("_TtC8NaurtSDK10Location2D")
 @interface Location2D : NSObject
@@ -345,31 +338,9 @@ typedef SWIFT_ENUM(NSInteger, Movement, open) {
   MovementStationary = 3,
 };
 
-@protocol NaurtDelegate;
-@class NSString;
-@class NSDictionary;
 @class NaurtLocation;
-@class NSNumber;
-
-SWIFT_CLASS("_TtC8NaurtSDK5Naurt")
-@interface Naurt : NSObject
-@property (nonatomic, strong) id <NaurtDelegate> _Nullable delegate;
-- (nullable instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata noServices:(BOOL)noServices timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly error:(NSError * _Nullable * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
-- (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
-- (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
-- (void)updateGeofencesWithGeo:(NSArray<Geofence *> * _Nonnull)geo;
-- (BOOL)updateMetadataWithMetadata:(NSDictionary * _Nullable)metadata error:(NSError * _Nullable * _Nullable)error;
-- (void)onAppClose;
-- (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
-- (NaurtLocation * _Nonnull)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nonnull)getJourneyUUID SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nonnull)getDeviceUUID SWIFT_WARN_UNUSED_RESULT;
-- (double)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
-- (void)setEmissionFrequencyWithFrequency:(NSNumber * _Nullable)frequency;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
+@class NSDictionary;
+@class NSString;
 
 SWIFT_PROTOCOL("_TtP8NaurtSDK13NaurtDelegate_")
 @protocol NaurtDelegate
@@ -389,9 +360,38 @@ SWIFT_CLASS("_TtC8NaurtSDK13NaurtLocation")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
+@interface NaurtLocationManager : NSObject
+@property (nonatomic, strong) id <NaurtDelegate> _Nullable delegate;
+- (nonnull instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata noServices:(BOOL)noServices timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly OBJC_DESIGNATED_INITIALIZER;
+- (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
+- (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
+- (void)updateGeofencesWithGeo:(NSArray<Geofence *> * _Nonnull)geo;
+- (void)updateMetadataWithMetadata:(NSDictionary * _Nullable)metadata;
+- (void)onAppClose;
+- (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
+- (NaurtLocation * _Nonnull)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getJourneyUUID SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getDeviceUUID SWIFT_WARN_UNUSED_RESULT;
+- (double)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
+- (void)setEmissionFrequencyWithFrequency:(NSNumber * _Nullable)frequency;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC8NaurtSDK10POIManager")
+@interface POIManager : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 typedef SWIFT_ENUM(NSInteger, PoiError, open) {
-  PoiErrorNotValidated = 0,
-  PoiErrorInvalidJson = 1,
+  PoiErrorInvalidJson = 0,
+  PoiErrorMaxRetries = 1,
+  PoiErrorUnknown = 2,
 };
 static NSString * _Nonnull const PoiErrorDomain = @"NaurtSDK.PoiError";
 
@@ -429,14 +429,6 @@ SWIFT_CLASS("_TtC8NaurtSDK15TemporalAnomaly")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-typedef SWIFT_ENUM(NSInteger, UpdateMetadataError, open) {
-  UpdateMetadataErrorInvalidJson = 0,
-  UpdateMetadataErrorNoLocationService = 1,
-  UpdateMetadataErrorNoSensorService = 2,
-  UpdateMetadataErrorFileSystem = 3,
-};
-static NSString * _Nonnull const UpdateMetadataErrorDomain = @"NaurtSDK.UpdateMetadataError";
 
 #endif
 #if defined(__cplusplus)
