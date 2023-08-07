@@ -18,8 +18,20 @@ import simd
 @objc public class POIManager : ObjectiveC.NSObject {
   public init(apiKey: Swift.String)
   public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping (Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
-  public func getPoi(latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distance_filter: Swift.Double?, completion: @escaping (Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func getPoi(latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : [NaurtSDK.PoiEntry]]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   @objc deinit
+}
+public struct PoiResponse : Swift.Codable {
+  public let poiMap: [Swift.String : [NaurtSDK.PoiEntry]]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PoiEntry : Swift.Codable {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let distance: Swift.Double?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum Movement : Swift.Int {
   case Unknown = 0
