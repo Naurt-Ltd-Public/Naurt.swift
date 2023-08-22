@@ -369,7 +369,7 @@ SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
 - (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
 - (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
 - (void)updateGeofencesWithGeo:(NSArray<Geofence *> * _Nonnull)geo;
-- (void)updateMetadataWithMetadata:(NSDictionary * _Nullable)metadata;
+- (void)newDestinationWithMetadata:(NSDictionary * _Nullable)metadata;
 - (void)onAppClose;
 - (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
 - (NaurtLocation * _Nonnull)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
@@ -809,7 +809,7 @@ SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
 - (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
 - (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
 - (void)updateGeofencesWithGeo:(NSArray<Geofence *> * _Nonnull)geo;
-- (void)updateMetadataWithMetadata:(NSDictionary * _Nullable)metadata;
+- (void)newDestinationWithMetadata:(NSDictionary * _Nullable)metadata;
 - (void)onAppClose;
 - (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
 - (NaurtLocation * _Nonnull)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;

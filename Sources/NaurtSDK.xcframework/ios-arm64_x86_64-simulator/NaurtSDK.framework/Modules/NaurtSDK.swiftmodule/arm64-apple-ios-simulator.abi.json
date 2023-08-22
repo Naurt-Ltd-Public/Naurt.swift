@@ -3681,8 +3681,8 @@
           },
           {
             "kind": "Function",
-            "name": "updateMetadata",
-            "printedName": "updateMetadata(metadata:)",
+            "name": "newDestination",
+            "printedName": "newDestination(metadata:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3705,10 +3705,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@NaurtSDK@objc(cs)NaurtLocationManager(im)updateMetadataWithMetadata:",
-            "mangledName": "$s8NaurtSDK0A15LocationManagerC14updateMetadata8metadataySo12NSDictionaryCSg_tF",
+            "usr": "c:@M@NaurtSDK@objc(cs)NaurtLocationManager(im)newDestinationWithMetadata:",
+            "mangledName": "$s8NaurtSDK0A15LocationManagerC14newDestination8metadataySo12NSDictionaryCSg_tF",
             "moduleName": "NaurtSDK",
-            "objc_name": "updateMetadataWithMetadata:",
+            "objc_name": "newDestinationWithMetadata:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -9130,7 +9130,7 @@
       "kind": "StringLiteral",
       "offset": 517,
       "length": 71,
-      "value": "\"https:\/\/73rxykrdaxmqpfr3qv3wydfkfa0bcksu.lambda-url.eu-west-2.on.aws\/\""
+      "value": "\"https:\/\/mzl4vartokbtx77o44fk2psqk40xbixd.lambda-url.eu-west-2.on.aws\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
@@ -15289,195 +15289,195 @@
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
       "offset": 9044,
-      "length": 25,
-      "value": "\"Using Version 1.0.0 rc2\""
+      "length": 21,
+      "value": "\"Using Version 1.0.0\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 9489,
+      "offset": 9485,
       "length": 76,
       "value": "\"Can not write to log file \""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 9536,
+      "offset": 9532,
       "length": 2,
       "value": "\" as it simply does not exist\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 9673,
+      "offset": 9669,
       "length": 21,
       "value": "\"yyyy\/MM\/dd HH:mm:ss\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 9823,
+      "offset": 9819,
       "length": 5,
       "value": "\" | \""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 9867,
+      "offset": 9863,
       "length": 5,
       "value": "\" | \""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 9883,
+      "offset": 9879,
       "length": 4,
       "value": "\"\n\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10081,
+      "offset": 10077,
       "length": 37,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10099,
+      "offset": 10095,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10117,
+      "offset": 10113,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10158,
+      "offset": 10154,
       "length": 51,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10168,
+      "offset": 10164,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10208,
+      "offset": 10204,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10239,
+      "offset": 10235,
       "length": 50,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10249,
+      "offset": 10245,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10288,
+      "offset": 10284,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10318,
+      "offset": 10314,
       "length": 49,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10328,
+      "offset": 10324,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10366,
+      "offset": 10362,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10395,
+      "offset": 10391,
       "length": 48,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10405,
+      "offset": 10401,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10442,
+      "offset": 10438,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10472,
+      "offset": 10468,
       "length": 49,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10482,
+      "offset": 10478,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10520,
+      "offset": 10516,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10599,
+      "offset": 10595,
       "length": 37,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10617,
+      "offset": 10613,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/FileHelper.swift",
       "kind": "StringLiteral",
-      "offset": 10635,
+      "offset": 10631,
       "length": 3,
       "value": "\"\""
     },

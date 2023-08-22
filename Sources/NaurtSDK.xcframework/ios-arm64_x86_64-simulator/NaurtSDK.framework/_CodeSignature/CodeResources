@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NaurtSDK-Swift.h</key>
 		<data>
-		zjru30AADvAxOOMpeH7n2us7sZM=
+		WxD8c0kENi09hoyRFbS0KUD/SeI=
 		</data>
 		<key>Headers/NaurtSDK.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1YZE1xy4gziafpmdEL27Fb5JWYw=
+		MEuNdnLud8DM5M1IjXMKcC5RonU=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		tuCfoDVBqeMy6NWYQjB4lQtiOg4=
+		zd+lcS9pGBzRAnTGAHCsi04kJf0=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		MxspkFnPe058Cy30Tdo3sOH07t8=
+		D9rSzaflMczLaSyJ1VLq/ok/d2k=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		MxspkFnPe058Cy30Tdo3sOH07t8=
+		D9rSzaflMczLaSyJ1VLq/ok/d2k=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CUn35UdbteO9jBQiRVcz0+jScIc=
+		kG7AHvwf5G5mUC1jfE/AubMzoM0=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		tuCfoDVBqeMy6NWYQjB4lQtiOg4=
+		zd+lcS9pGBzRAnTGAHCsi04kJf0=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		BHPtSIBTlCwzbyBOshmsVzZGv5M=
+		x/zrTUp3jjxuNoICmDjT9gWkDW4=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BHPtSIBTlCwzbyBOshmsVzZGv5M=
+		x/zrTUp3jjxuNoICmDjT9gWkDW4=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9htX6h4m24Uq7Kspa6/9/PoKsk4=
+		dE0xJ6h46AIirXYbHbEiXoTVb0s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nNVLDITmaXdpUwftxboSVRKeIfvWhhoZ+4atGxNJBCI=
+			ddYlTk5zYkosAiPzHGIKWRrmAhYqxynPxUjtNACwguQ=
 			</data>
 		</dict>
 		<key>Headers/NaurtSDK.h</key>
@@ -81,14 +81,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ev1jSKYpwoDM6P2wOYL3esgwhVGeSS25VvdyS8JZLS4=
+			e7ErP65ExbgfJvb7itDaixAKTwbO6CRFuSQflJ0R9yY=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RT/txDGzGZThSw6RJ5hZvl6sWZF26ETQhRXG4oWdubE=
+			XKVGNxS6oghTnYl4p9eNIE24ibv0+OwTLD10iQHa8lU=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -102,28 +102,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RT/txDGzGZThSw6RJ5hZvl6sWZF26ETQhRXG4oWdubE=
+			XKVGNxS6oghTnYl4p9eNIE24ibv0+OwTLD10iQHa8lU=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			C5OcEeyawi4AGTbm/lxIbsuPpC65oh7UpquayTLnzfE=
+			oKnnkgImiFaXd6WIjGcURi1qaANOrVkdOLLnSrVJ97s=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ev1jSKYpwoDM6P2wOYL3esgwhVGeSS25VvdyS8JZLS4=
+			e7ErP65ExbgfJvb7itDaixAKTwbO6CRFuSQflJ0R9yY=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZoCMs30BcR32dkqb5HnWVlzvE9q7JVqyQoB1BXZMXfg=
+			bScrYIeMqZQ+OfQGNm2VKh0B6seKJG2Dkb/M/PTWhcg=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -137,14 +137,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZoCMs30BcR32dkqb5HnWVlzvE9q7JVqyQoB1BXZMXfg=
+			bScrYIeMqZQ+OfQGNm2VKh0B6seKJG2Dkb/M/PTWhcg=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y6zkBj34SCyficmL79nn4G1UVUCLd+q+QL/HqdPyIAE=
+			mNZMmQ30HdJCWEVVH6OHZkJkV0WmRlvl9pkI4btzugk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -114,7 +114,7 @@ infix operator .* : MultiplicationPrecedence
   @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
   @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
   @objc final public func updateGeofences(geo: [NaurtSDK.Geofence])
-  @objc final public func updateMetadata(metadata: Foundation.NSDictionary?)
+  @objc final public func newDestination(metadata: Foundation.NSDictionary?)
   @objc final public func onAppClose()
   @objc final public func getIsValidated() -> Swift.Bool
   @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation
