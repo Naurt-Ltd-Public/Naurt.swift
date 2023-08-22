@@ -1,0 +1,11 @@
+framework module NaurtSDK {
+  umbrella header "NaurtSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module NaurtSDK.Swift {
+  header "NaurtSDK-Swift.h"
+  requires objc
+}

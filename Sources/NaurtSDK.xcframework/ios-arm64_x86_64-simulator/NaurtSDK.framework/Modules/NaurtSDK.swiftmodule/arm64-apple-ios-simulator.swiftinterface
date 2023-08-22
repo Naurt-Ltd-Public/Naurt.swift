@@ -1,17 +1,69 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NaurtSDK
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NaurtSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Accelerate
 import Combine
 import CoreLocation
 import CoreMotion
+import Dispatch
 import Foundation
-import GenericJSON
-import LASwift
+@_exported import NaurtSDK
+import Security
 import Swift
 import UIKit
-import ZIPFoundation
 import _Concurrency
 import _StringProcessing
+import simd
+@objc public class POIManager : ObjectiveC.NSObject {
+  public init(apiKey: Swift.String)
+  public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping (Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func getPoi(latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : [NaurtSDK.PoiEntry]]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  @objc deinit
+}
+public struct PoiResponse : Swift.Codable {
+  public let poiMap: [Swift.String : [NaurtSDK.PoiEntry]]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PoiEntry : Swift.Codable {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let distance: Swift.Double?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum Movement : Swift.Int {
+  case Unknown = 0
+  case Walking = 1
+  case Vehicle = 2
+  case Stationary = 3
+  public init?(rawValue: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension NaurtSDK.Movement : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public enum Source : Swift.Int {
+  case NaurtFull = 0
+  case NaurtSensor = 1
+  case Gnss = 2
+  public init?(rawValue: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension NaurtSDK.Source : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnomalyAlert : ObjectiveC.NSObject {
   public var temporalAnomaly: NaurtSDK.TemporalAnomaly?
   public var spatialAnomaly: NaurtSDK.SpacialAnomaly?
@@ -31,112 +83,14 @@ import _StringProcessing
   public init(lastPosition: NaurtSDK.Location2D, thisPosition: NaurtSDK.Location2D, distanceDelta: Swift.Double)
   @objc deinit
 }
-@objc public enum NaurtMovement : Swift.Int, Swift.Codable {
-  case na = 0
-  case stationary = 1
-  case onFoot = 2
-  case vehicleMotion = 3
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public enum InitNaurtError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case fileSystem = 0
-  case couldNotCreateFirstJourney = 1
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public enum UpdateMetadataError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case invalidJson = 0
-  case noLocationService = 1
-  case noSensorService = 2
-  case fileSystem = 3
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var errorDescription: Swift.String? {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case notValidated = 0
-  case invalidJson = 1
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public class Geofence : ObjectiveC.NSObject {
-  final public let id: Swift.String
-  final public let coordinate: NaurtSDK.Location2D
-  final public let alertDistance: Swift.Double
-  public init(id: Swift.String, coordinate: NaurtSDK.Location2D, alertDistance: Swift.Double)
-  @objc deinit
-}
-@objc public class Location2D : ObjectiveC.NSObject {
-  final public let latitude: Swift.Double
-  final public let longitude: Swift.Double
-  public init(latitude: Swift.Double, longitude: Swift.Double)
-  @objc deinit
-}
-@objc final public class Naurt : ObjectiveC.NSObject {
-  @objc final public var delegate: (any NaurtSDK.NaurtDelegate)?
-  @objc public init(apiKey: Swift.String, metadata: Foundation.NSDictionary?, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0) throws
-  @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
-  @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
-  @objc final public func updateGeofences(geo: [NaurtSDK.Geofence])
-  @objc final public func updateMetadata(metadata: Foundation.NSDictionary?) throws
-  @objc final public func onAppClose()
-  @objc final public func pointOfInterest(metadata: Foundation.NSDictionary) throws
-  @objc final public func getIsValidated() -> Swift.Bool
-  @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation
-  @objc final public func getJourneyUUID() -> Swift.String
-  @objc final public func getDeviceUUID() -> Swift.String
-  @objc final public func distanceBetween(_ a: NaurtSDK.Location2D) -> Swift.Double
-  @objc final public func setEmissionFrequency(frequency: Foundation.NSNumber?)
-  final public func setEmissionFrequency(_ frequency: Swift.Double?)
-  @objc deinit
-}
+infix operator .* : MultiplicationPrecedence
 @objc public protocol NaurtDelegate {
-  @objc func didUpdateLocation(naurtPoint: NaurtSDK.NaurtLocation)
+  @objc func didUpdateLocation(_ naurtPoint: NaurtSDK.NaurtLocation)
   @objc func onAppClose()
-  @objc optional func didChangeValidated(isValidated: Swift.Bool)
-  @objc optional func didEnterGeofence(id: Swift.String)
-  @objc optional func didLeaveGeofence(id: Swift.String)
-  @objc optional func anomalyAlert(alert: NaurtSDK.AnomalyAlert)
-  @objc optional func errorStream(errorInformation: Swift.String)
+  @objc optional func didChangeValidated(_ isValidated: Swift.Bool)
+  @objc optional func didInteractWithGeofence(_ events: Foundation.NSDictionary)
+  @objc optional func anomalyAlert(_ alert: NaurtSDK.AnomalyAlert)
+  @objc optional func errorStream(_ errorInformation: Swift.String)
 }
 @objc public protocol LocationServiceDelegate {
   @objc var user: (any NaurtSDK.LocationServiceUser)? { get set }
@@ -154,8 +108,21 @@ import _StringProcessing
   @objc func startUpdatingSensors()
   @objc func stopUpdatingSensors()
 }
-@objc public class MotionContainer : ObjectiveC.NSObject {
-  public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double)?, timeS: Swift.Double)
+@objc final public class NaurtLocationManager : ObjectiveC.NSObject {
+  @objc final public var delegate: (any NaurtSDK.NaurtDelegate)?
+  @objc public init(apiKey: Swift.String, metadata: Foundation.NSDictionary? = nil, noServices: Swift.Bool = false, timeAnomaly: Swift.Double = 10.0, distanceAnomaly: Swift.Double = 100.0)
+  @objc final public func newLocationServicePoint(newLocation: CoreLocation.CLLocation)
+  @objc final public func newSensorServicePoint(newMotion: NaurtSDK.MotionContainer)
+  @objc final public func updateGeofences(geo: [NaurtSDK.Geofence])
+  @objc final public func newDestination(metadata: Foundation.NSDictionary?)
+  @objc final public func onAppClose()
+  @objc final public func getIsValidated() -> Swift.Bool
+  @objc final public func getNaurtLocation() -> NaurtSDK.NaurtLocation
+  @objc final public func getJourneyUUID() -> Swift.String
+  @objc final public func getDeviceUUID() -> Swift.String
+  @objc final public func distanceBetween(_ a: NaurtSDK.Location2D) -> Swift.Double
+  @objc final public func setEmissionFrequency(frequency: Foundation.NSNumber?)
+  final public func setEmissionFrequency(_ frequency: Swift.Double?)
   @objc deinit
 }
 @objc public class NaurtLocation : ObjectiveC.NSObject, Swift.Codable {
@@ -171,46 +138,73 @@ import _StringProcessing
   public var horizontalAccuracy: Swift.Double
   public var horizontalCovariance: Swift.Double
   public var source: NaurtSDK.Source
-  public var motionType: NaurtSDK.NaurtMovement
-  public init(timestamp: Swift.Double, longitude: Swift.Double, latitude: Swift.Double, altitude: Swift.Double, verticalAccuracy: Swift.Double, speed: Swift.Double, speedAccuracy: Swift.Double, course: Swift.Double, courseAccuracy: Swift.Double, horizontalAccuracy: Swift.Double, horizontalCovariance: Swift.Double, source: NaurtSDK.Source, motionType: NaurtSDK.NaurtMovement)
+  public var motionType: NaurtSDK.Movement
+  public init(timestamp: Swift.Double, longitude: Swift.Double, latitude: Swift.Double, altitude: Swift.Double, verticalAccuracy: Swift.Double, speed: Swift.Double, speedAccuracy: Swift.Double, course: Swift.Double, courseAccuracy: Swift.Double, horizontalAccuracy: Swift.Double, horizontalCovariance: Swift.Double, source: NaurtSDK.Source, motionType: NaurtSDK.Movement)
   public func toString(published: Swift.Bool) -> Swift.String
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc public enum Source : Swift.Int {
-  case NaurtFull
-  case NaurtSensor
-  case Gnss
-  public init?(rawValue: Swift.String)
+@objc public class Location2D : ObjectiveC.NSObject {
+  final public let latitude: Swift.Double
+  final public let longitude: Swift.Double
+  public init(latitude: Swift.Double, longitude: Swift.Double)
+  @objc deinit
+}
+@objc public class Geofence : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let coordinate: NaurtSDK.Location2D
+  final public let alertDistance: Swift.Double
+  public init(id: Swift.String, coordinate: NaurtSDK.Location2D, alertDistance: Swift.Double)
+  @objc deinit
+}
+@objc public enum GeofenceActivityType : Swift.Int {
+  case Enter = 0
+  case Leave = 1
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
-extension NaurtSDK.Source : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
+public func distanceBetween(_ a: NaurtSDK.Location2D, _ b: NaurtSDK.Location2D) -> Swift.Double
 public struct rawLocation {
   public var latitude: Swift.Double
   public var longitude: Swift.Double
   public var timestamp: Swift.UInt64
 }
-public func distanceBetween(_ a: NaurtSDK.Location2D, _ b: NaurtSDK.Location2D) -> Swift.Double
-extension NaurtSDK.NaurtMovement : Swift.Equatable {}
-extension NaurtSDK.NaurtMovement : Swift.Hashable {}
-extension NaurtSDK.NaurtMovement : Swift.RawRepresentable {}
-extension NaurtSDK.InitNaurtError : Swift.Equatable {}
-extension NaurtSDK.InitNaurtError : Swift.Hashable {}
-extension NaurtSDK.InitNaurtError : Swift.RawRepresentable {}
-extension NaurtSDK.UpdateMetadataError : Swift.Equatable {}
-extension NaurtSDK.UpdateMetadataError : Swift.Hashable {}
-extension NaurtSDK.UpdateMetadataError : Swift.RawRepresentable {}
-extension NaurtSDK.PoiError : Swift.Equatable {}
-extension NaurtSDK.PoiError : Swift.Hashable {}
-extension NaurtSDK.PoiError : Swift.RawRepresentable {}
+@objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case invalidJson = 0
+  case maxRetries = 1
+  case unknown = 2
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class MotionContainer : ObjectiveC.NSObject {
+  public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double)?, timeS: Swift.Double)
+  @objc deinit
+}
+extension NaurtSDK.Movement : Swift.Equatable {}
+extension NaurtSDK.Movement : Swift.Hashable {}
+extension NaurtSDK.Movement : Swift.RawRepresentable {}
 extension NaurtSDK.Source : Swift.Equatable {}
 extension NaurtSDK.Source : Swift.Hashable {}
 extension NaurtSDK.Source : Swift.RawRepresentable {}
+extension NaurtSDK.GeofenceActivityType : Swift.Equatable {}
+extension NaurtSDK.GeofenceActivityType : Swift.Hashable {}
+extension NaurtSDK.GeofenceActivityType : Swift.RawRepresentable {}
+extension NaurtSDK.PoiError : Swift.Equatable {}
+extension NaurtSDK.PoiError : Swift.Hashable {}
+extension NaurtSDK.PoiError : Swift.RawRepresentable {}
