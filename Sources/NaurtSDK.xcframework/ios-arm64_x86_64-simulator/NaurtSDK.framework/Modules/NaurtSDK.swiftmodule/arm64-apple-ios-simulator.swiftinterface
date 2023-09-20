@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios13.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NaurtSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Accelerate
@@ -14,24 +14,14 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 import simd
 @objc public class POIManager : ObjectiveC.NSObject {
   public init(apiKey: Swift.String)
-  public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping (Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
-  public func getPoi(latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : [NaurtSDK.PoiEntry]]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func getPoi(poiId: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func deletePoi(poiIds: [Swift.String], completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   @objc deinit
-}
-public struct PoiResponse : Swift.Codable {
-  public let poiMap: [Swift.String : [NaurtSDK.PoiEntry]]
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct PoiEntry : Swift.Codable {
-  public let latitude: Swift.Double
-  public let longitude: Swift.Double
-  public let distance: Swift.Double?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum Movement : Swift.Int {
   case Unknown = 0

@@ -1,7 +1,7 @@
 framework module NaurtSDK {
   umbrella header "NaurtSDK.h"
-
   export *
+
   module * { export * }
 }
 
