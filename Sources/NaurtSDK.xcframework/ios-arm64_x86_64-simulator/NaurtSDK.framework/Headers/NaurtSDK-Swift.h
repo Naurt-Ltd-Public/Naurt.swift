@@ -277,6 +277,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 #endif
@@ -325,22 +326,6 @@ SWIFT_CLASS("_TtC8NaurtSDK10Location2D")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@protocol LocationServiceUser;
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK23LocationServiceDelegate_")
-@protocol LocationServiceDelegate
-@property (nonatomic, strong) id <LocationServiceUser> _Nullable user;
-- (void)startUpdatingLocation;
-- (void)stopUpdatingLocation;
-@end
-
-@class CLLocation;
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK19LocationServiceUser_")
-@protocol LocationServiceUser
-- (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
-@end
-
 
 SWIFT_CLASS("_TtC8NaurtSDK15MotionContainer")
 @interface MotionContainer : NSObject
@@ -368,6 +353,8 @@ SWIFT_PROTOCOL("_TtP8NaurtSDK13NaurtDelegate_")
 - (void)didInteractWithGeofence:(NSDictionary * _Nonnull)events;
 - (void)anomalyAlert:(AnomalyAlert * _Nonnull)alert;
 - (void)errorStream:(NSString * _Nonnull)errorInformation;
+- (void)didChangeAuthorisationStatus:(CLAuthorizationStatus)status;
+- (void)didChangeAccuracyAuthorisation:(CLAccuracyAuthorization)status;
 @end
 
 
@@ -379,20 +366,32 @@ SWIFT_CLASS("_TtC8NaurtSDK13NaurtLocation")
 
 @class NSNumber;
 
+/// The core Naurt object. Only create a single instance of this class.
+/// This class will be your main point of contact with Naurt. Upon instantiation, your Naurt API key will be validated and data collection will begin.
 SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
 @interface NaurtLocationManager : NSObject
 @property (nonatomic, strong) id <NaurtDelegate> _Nullable delegate;
-- (nonnull instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata noServices:(BOOL)noServices timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly OBJC_DESIGNATED_INITIALIZER;
-- (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
-- (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
+- (nonnull instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly OBJC_DESIGNATED_INITIALIZER;
+/// Used to update the Geofences that Naurt is listening to
+/// Send in a list of <code>Geofence</code> object. Use an empty list to turn the
+/// geofence system off
+/// Does nothing if Naurt is killed. Does nothing if your API key has not been validated
 - (void)updateGeofencesWithGeo:(NSArray<Geofence *> * _Nonnull)geo;
+/// Used to inform Naurt of a new destination
+/// Only insert metadata of the place you are expecting the user to go.
+/// Do not include any personal information in the metadata, as it break’s
+/// Naurt’s terms of service - for instance, names, email address or phone
+/// numbers.
 - (void)newDestinationWithMetadata:(NSDictionary * _Nullable)metadata;
 - (void)onAppClose;
 - (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
-- (NaurtLocation * _Nonnull)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
+- (NaurtLocation * _Nullable)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getJourneyUUID SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getDeviceUUID SWIFT_WARN_UNUSED_RESULT;
-- (double)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
+- (CLAuthorizationStatus)getAuthorisationStatus SWIFT_WARN_UNUSED_RESULT;
+- (CLAccuracyAuthorization)getAccuracyAuthorisation SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)getIsBlocked SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
 - (void)setEmissionFrequencyWithFrequency:(NSNumber * _Nullable)frequency;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -411,21 +410,6 @@ typedef SWIFT_ENUM(NSInteger, PoiError, open) {
   PoiErrorUnknown = 2,
 };
 static NSString * _Nonnull const PoiErrorDomain = @"NaurtSDK.PoiError";
-
-@protocol SensorServiceUser;
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK21SensorServiceDelegate_")
-@protocol SensorServiceDelegate
-@property (nonatomic, strong) id <SensorServiceUser> _Nullable user;
-- (void)startUpdatingSensors;
-- (void)stopUpdatingSensors;
-@end
-
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK17SensorServiceUser_")
-@protocol SensorServiceUser
-- (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
-@end
 
 typedef SWIFT_ENUM(NSInteger, Source, open) {
   SourceNaurtFull = 0,
@@ -734,6 +718,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 #endif
@@ -782,22 +767,6 @@ SWIFT_CLASS("_TtC8NaurtSDK10Location2D")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@protocol LocationServiceUser;
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK23LocationServiceDelegate_")
-@protocol LocationServiceDelegate
-@property (nonatomic, strong) id <LocationServiceUser> _Nullable user;
-- (void)startUpdatingLocation;
-- (void)stopUpdatingLocation;
-@end
-
-@class CLLocation;
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK19LocationServiceUser_")
-@protocol LocationServiceUser
-- (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
-@end
-
 
 SWIFT_CLASS("_TtC8NaurtSDK15MotionContainer")
 @interface MotionContainer : NSObject
@@ -825,6 +794,8 @@ SWIFT_PROTOCOL("_TtP8NaurtSDK13NaurtDelegate_")
 - (void)didInteractWithGeofence:(NSDictionary * _Nonnull)events;
 - (void)anomalyAlert:(AnomalyAlert * _Nonnull)alert;
 - (void)errorStream:(NSString * _Nonnull)errorInformation;
+- (void)didChangeAuthorisationStatus:(CLAuthorizationStatus)status;
+- (void)didChangeAccuracyAuthorisation:(CLAccuracyAuthorization)status;
 @end
 
 
@@ -836,20 +807,32 @@ SWIFT_CLASS("_TtC8NaurtSDK13NaurtLocation")
 
 @class NSNumber;
 
+/// The core Naurt object. Only create a single instance of this class.
+/// This class will be your main point of contact with Naurt. Upon instantiation, your Naurt API key will be validated and data collection will begin.
 SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
 @interface NaurtLocationManager : NSObject
 @property (nonatomic, strong) id <NaurtDelegate> _Nullable delegate;
-- (nonnull instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata noServices:(BOOL)noServices timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly OBJC_DESIGNATED_INITIALIZER;
-- (void)newLocationServicePointWithNewLocation:(CLLocation * _Nonnull)newLocation;
-- (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
+- (nonnull instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly OBJC_DESIGNATED_INITIALIZER;
+/// Used to update the Geofences that Naurt is listening to
+/// Send in a list of <code>Geofence</code> object. Use an empty list to turn the
+/// geofence system off
+/// Does nothing if Naurt is killed. Does nothing if your API key has not been validated
 - (void)updateGeofencesWithGeo:(NSArray<Geofence *> * _Nonnull)geo;
+/// Used to inform Naurt of a new destination
+/// Only insert metadata of the place you are expecting the user to go.
+/// Do not include any personal information in the metadata, as it break’s
+/// Naurt’s terms of service - for instance, names, email address or phone
+/// numbers.
 - (void)newDestinationWithMetadata:(NSDictionary * _Nullable)metadata;
 - (void)onAppClose;
 - (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
-- (NaurtLocation * _Nonnull)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
+- (NaurtLocation * _Nullable)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getJourneyUUID SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getDeviceUUID SWIFT_WARN_UNUSED_RESULT;
-- (double)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
+- (CLAuthorizationStatus)getAuthorisationStatus SWIFT_WARN_UNUSED_RESULT;
+- (CLAccuracyAuthorization)getAccuracyAuthorisation SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)getIsBlocked SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
 - (void)setEmissionFrequencyWithFrequency:(NSNumber * _Nullable)frequency;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -868,21 +851,6 @@ typedef SWIFT_ENUM(NSInteger, PoiError, open) {
   PoiErrorUnknown = 2,
 };
 static NSString * _Nonnull const PoiErrorDomain = @"NaurtSDK.PoiError";
-
-@protocol SensorServiceUser;
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK21SensorServiceDelegate_")
-@protocol SensorServiceDelegate
-@property (nonatomic, strong) id <SensorServiceUser> _Nullable user;
-- (void)startUpdatingSensors;
-- (void)stopUpdatingSensors;
-@end
-
-
-SWIFT_PROTOCOL("_TtP8NaurtSDK17SensorServiceUser_")
-@protocol SensorServiceUser
-- (void)newSensorServicePointWithNewMotion:(MotionContainer * _Nonnull)newMotion;
-@end
 
 typedef SWIFT_ENUM(NSInteger, Source, open) {
   SourceNaurtFull = 0,
