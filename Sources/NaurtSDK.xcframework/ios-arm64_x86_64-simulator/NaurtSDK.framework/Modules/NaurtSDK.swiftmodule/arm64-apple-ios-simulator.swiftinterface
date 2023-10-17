@@ -19,7 +19,7 @@ import simd
 @objc public class POIManager : ObjectiveC.NSObject {
   public init(apiKey: Swift.String)
   public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
-  public func getPoi(poiId: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String], metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func getPoi(poiId: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String]?, metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   public func deletePoi(poiIds: [Swift.String], completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   @objc deinit
 }
@@ -29,6 +29,9 @@ import simd
   case Vehicle = 2
   case Stationary = 3
   public init?(rawValue: Swift.String)
+  public var description: Swift.String {
+    get
+  }
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -56,7 +59,7 @@ extension NaurtSDK.Source : Swift.Codable {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class AnomalyAlert : ObjectiveC.NSObject {
   public var temporalAnomaly: NaurtSDK.TemporalAnomaly?
-  public var spatialAnomaly: NaurtSDK.SpacialAnomaly?
+  public var spatialAnomaly: NaurtSDK.SpatialAnomaly?
   @objc deinit
 }
 @objc public class TemporalAnomaly : ObjectiveC.NSObject {
@@ -66,7 +69,7 @@ extension NaurtSDK.Source : Swift.Codable {
   public init(lastTime: Swift.Double, thisTime: Swift.Double, timeDelta: Swift.Double)
   @objc deinit
 }
-@objc public class SpacialAnomaly : ObjectiveC.NSObject {
+@objc public class SpatialAnomaly : ObjectiveC.NSObject {
   final public let lastPosition: NaurtSDK.Location2D
   final public let thisPosition: NaurtSDK.Location2D
   final public let distanceDelta: Swift.Double
@@ -148,11 +151,6 @@ infix operator .* : MultiplicationPrecedence
   }
 }
 public func distanceBetween(_ a: NaurtSDK.Location2D, _ b: NaurtSDK.Location2D) -> Swift.Double
-public struct rawLocation {
-  public var latitude: Swift.Double
-  public var longitude: Swift.Double
-  public var timestamp: Swift.UInt64
-}
 @objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
   case invalidJson = 0
   case maxRetries = 1

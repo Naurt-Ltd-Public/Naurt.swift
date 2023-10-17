@@ -301,6 +301,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+/// Wrapper for <code>SpatialAnomaly</code> and <code>TemporalAnomaly</code>
+/// Both <code>temporalAnomaly</code> and <code>spatialAnomaly</code> are optional, but if <code>anomalyAlert</code> of the <code>NaurtDelegate</code> is called at least one
+/// is guaranteed to be present
 SWIFT_CLASS("_TtC8NaurtSDK12AnomalyAlert")
 @interface AnomalyAlert : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -333,6 +336,8 @@ SWIFT_CLASS("_TtC8NaurtSDK15MotionContainer")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Enum of the current movement type detected by Naurt
+/// Options are <code>Unknown</code>, <code>Walking</code>, <code>Vehicle</code> (any vehicle) or <code>Stationary</code> (vehicle or walking)
 typedef SWIFT_ENUM(NSInteger, Movement, open) {
   MovementUnknown = 0,
   MovementWalking = 1,
@@ -346,6 +351,8 @@ typedef SWIFT_ENUM(NSInteger, Movement, open) {
 
 SWIFT_PROTOCOL("_TtP8NaurtSDK13NaurtDelegate_")
 @protocol NaurtDelegate
+/// Primary way in which Naurt communicates location data to you
+/// <code>NaurtLocationManager</code>
 - (void)didUpdateLocation:(NaurtLocation * _Nonnull)naurtPoint;
 - (void)onAppClose;
 @optional
@@ -358,6 +365,7 @@ SWIFT_PROTOCOL("_TtP8NaurtSDK13NaurtDelegate_")
 @end
 
 
+/// Primary way in which Naurt communicates location information to you
 SWIFT_CLASS("_TtC8NaurtSDK13NaurtLocation")
 @interface NaurtLocation : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -370,7 +378,25 @@ SWIFT_CLASS("_TtC8NaurtSDK13NaurtLocation")
 /// This class will be your main point of contact with Naurt. Upon instantiation, your Naurt API key will be validated and data collection will begin.
 SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
 @interface NaurtLocationManager : NSObject
+/// You <em>must</em> set a delegate in order to work with the <code>NaurtLocationManager</code>
+/// Usage:
+/// \code
+/// class YourClass: Naurt {
+///  var naurt: NaurtLocationManager;
+///
+///     init() {
+///         self.naurt = NaurtLocationManager(apiKey: "<YOUR KEY HERE>");
+///
+///         self.naurt.delegate = self
+///     }
+/// }
+///
+/// \endcode
 @property (nonatomic, strong) id <NaurtDelegate> _Nullable delegate;
+/// Use this to create the <code>NaurtLocationManager</code> - make sure to pass your valid Naurt API key in!
+/// <code>metadata</code> here acts like an initial call of <code>newDestination</code> for if you want to create <code>NaurtLocationManager</code> with a destination in mind
+/// <code>timeAnomaly</code> and <code>distanceAnomaly</code> configure how large the anomaly has to be before it’s reported by
+/// <code>anomalyAlert</code> of the <code>NaurtDelegate</code>
 - (nonnull instancetype)initWithApiKey:(NSString * _Nonnull)apiKey metadata:(NSDictionary * _Nullable)metadata timeAnomaly:(double)timeAnomaly distanceAnomaly:(double)distanceAnomaly OBJC_DESIGNATED_INITIALIZER;
 /// Used to update the Geofences that Naurt is listening to
 /// Send in a list of <code>Geofence</code> object. Use an empty list to turn the
@@ -382,22 +408,55 @@ SWIFT_CLASS("_TtC8NaurtSDK20NaurtLocationManager")
 /// Do not include any personal information in the metadata, as it break’s
 /// Naurt’s terms of service - for instance, names, email address or phone
 /// numbers.
+/// You must use this method for Naurt to generate parking spot information
 - (void)newDestinationWithMetadata:(NSDictionary * _Nullable)metadata;
 - (void)onAppClose;
+/// Returns <code>true</code> if your API key has been validated
+/// If your key is not validated most of <code>NaurtLocationManager</code> features are disabled.
+/// However, you will still receive location updates from the <code>CLLocationManager</code>
 - (BOOL)getIsValidated SWIFT_WARN_UNUSED_RESULT;
+/// <em>Not recommended</em>
+/// Gets the current location. You should be using the delegate method instead
+/// Only use for debug purposes
+/// If returns <code>nil</code> then <code>NaurtLocationManager</code> is in the <code>blocked</code> state
 - (NaurtLocation * _Nullable)getNaurtLocation SWIFT_WARN_UNUSED_RESULT;
+/// Gets the Naurt assigned journey ID
 - (NSString * _Nonnull)getJourneyUUID SWIFT_WARN_UNUSED_RESULT;
+/// Gets the Naurt assigned device UUID
 - (NSString * _Nonnull)getDeviceUUID SWIFT_WARN_UNUSED_RESULT;
+/// Gets the current app location <code>CLAuthorizationStatus</code>
+/// This must return <code>.alwaysAuthorized</code> or <code>.whenInUseAuthorized</code> or the app will
+/// not get any location information. Use <code>NaurtLocationManager.requestWhenInUseAuthorization()</code>
+/// or <code>NaurtLocationManager.requestAlwaysAuthorization()</code> in order to get location permissions
+/// If you require background tracking, this must return <code>.alwaysAuthorized</code>. You must request that
+/// with <code>NaurtLocationManager.requestAlwaysAuthorization()</code>
+/// If this returns <code>.restricted</code> or <code>.denied</code> then <code>NaurtLocationManager</code> enters the <code>blocked</code> state
+/// and all features are disabled. You can check that with <code>NaurtLocationManager.getIsBlocked()</code>
 - (CLAuthorizationStatus)getAuthorisationStatus SWIFT_WARN_UNUSED_RESULT;
+/// Get the current app <code>CLAccuracyAuthorization</code>
+/// Ideally, this would return <code>.fullAccuracy</code>. If it does, Naurt is functioning at peak capacity.
+/// If this returns <code>.reducedAccuracy</code> the user is limiting the accuracy of location data the app can access.
+/// You might consider suggesting they enable better accuracy authorisation in the settings
 - (CLAccuracyAuthorization)getAccuracyAuthorisation SWIFT_WARN_UNUSED_RESULT;
+/// Get if Naurt has been <code>blocked</code> by the user due to location permissions
+/// If <code>CLAccuracyAuthorization</code> is <code>.denied</code> or <code>.restricted</code> then Naurt enters the <code>blocked</code> state and all
+/// features are disabled, to respect user privacy choices
+/// If the user grants the app location access Naurt will automatically leave the <code>blocked</code> state and continue normal operation
 - (BOOL)getIsBlocked SWIFT_WARN_UNUSED_RESULT;
+/// Distance between the current location and the location you specify in <code>Location2D</code>
+/// Uses the Karney method, highly efficient and accurate. Returns in metres.
+/// If <code>nil</code> then Naurt is in the <code>blocked</code> state
 - (NSNumber * _Nullable)distanceBetween:(Location2D * _Nonnull)a SWIFT_WARN_UNUSED_RESULT;
+/// Set the frequency with which Naurt outputs
+/// Units are in seconds. Default is nil - Naurt will output as often as possible, usually around 1 second
+/// Frequency setting is more of a suggestion than a timer
 - (void)setEmissionFrequencyWithFrequency:(NSNumber * _Nullable)frequency;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+/// Use this class to make requests to the Naurt POI API
 SWIFT_CLASS("_TtC8NaurtSDK10POIManager")
 @interface POIManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -411,6 +470,18 @@ typedef SWIFT_ENUM(NSInteger, PoiError, open) {
 };
 static NSString * _Nonnull const PoiErrorDomain = @"NaurtSDK.PoiError";
 
+/// Enum showing how the current <code>NaurtLocation</code> was calculated
+/// <ul>
+///   <li>
+///     <code>NaurtFull</code> means both GNSS and sensor fusion was used. Best possible accuracy
+///   </li>
+///   <li>
+///     <code>NaurtSensor</code> means only sensors were used e.g. the user is indoors and has no GNSS signals. Expect rapidly degrating location quality
+///   </li>
+///   <li>
+///     <code>Gnss</code> means only GNSS was used, and Naurt did not apply any improvements. This is used when your API key is not validated
+///   </li>
+/// </ul>
 typedef SWIFT_ENUM(NSInteger, Source, open) {
   SourceNaurtFull = 0,
   SourceNaurtSensor = 1,
@@ -418,13 +489,23 @@ typedef SWIFT_ENUM(NSInteger, Source, open) {
 };
 
 
-SWIFT_CLASS("_TtC8NaurtSDK14SpacialAnomaly")
-@interface SpacialAnomaly : NSObject
+/// Used to represent a spatial anomaly event
+/// Spatial anomaly events are when the location suddenly changes by large distances.
+/// This could indicate tampering with the location services, or other issues around background processing
+/// You can configure how much distance has to be covered before a spatial anomaly event is flagged by setting <code>distanceAnomaly</code> in the
+/// <code>NaurtLocationManager</code>. Default is 10 metres
+SWIFT_CLASS("_TtC8NaurtSDK14SpatialAnomaly")
+@interface SpatialAnomaly : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+/// Used to represent a time anomaly event
+/// Time anomaly events are when significant unexpected amounts of time pass between location fixes.
+/// This could indicate tampering with the location services, or other issues around background processing
+/// You can configure how long has to pass before a time anomaly event is flagged by setting <code>timeAnomaly</code> in the <code>NaurtLocationManager</code>
+/// initialiser. Default is 10 seconds
 SWIFT_CLASS("_TtC8NaurtSDK15TemporalAnomaly")
 @interface TemporalAnomaly : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
