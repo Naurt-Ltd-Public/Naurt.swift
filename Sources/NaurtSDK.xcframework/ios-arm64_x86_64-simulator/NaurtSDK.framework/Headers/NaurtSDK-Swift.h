@@ -322,6 +322,17 @@ typedef SWIFT_ENUM(NSInteger, GeofenceActivityType, open) {
   GeofenceActivityTypeLeave = 1,
 };
 
+@class Location2D;
+
+/// Util class wrapper for generic geodesic functions
+SWIFT_CLASS("_TtC8NaurtSDK6Karney")
+@interface Karney : NSObject
+/// Used to calculate the distance between two arbitrary locations
+/// Uses Karney algorithm, fast and accurate. Outputs in metres
+- (double)distanceBetween:(Location2D * _Nonnull)a :(Location2D * _Nonnull)b SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC8NaurtSDK10Location2D")
 @interface Location2D : NSObject
@@ -843,6 +854,17 @@ typedef SWIFT_ENUM(NSInteger, GeofenceActivityType, open) {
   GeofenceActivityTypeEnter = 0,
   GeofenceActivityTypeLeave = 1,
 };
+
+@class Location2D;
+
+/// Util class wrapper for generic geodesic functions
+SWIFT_CLASS("_TtC8NaurtSDK6Karney")
+@interface Karney : NSObject
+/// Used to calculate the distance between two arbitrary locations
+/// Uses Karney algorithm, fast and accurate. Outputs in metres
+- (double)distanceBetween:(Location2D * _Nonnull)a :(Location2D * _Nonnull)b SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 SWIFT_CLASS("_TtC8NaurtSDK10Location2D")

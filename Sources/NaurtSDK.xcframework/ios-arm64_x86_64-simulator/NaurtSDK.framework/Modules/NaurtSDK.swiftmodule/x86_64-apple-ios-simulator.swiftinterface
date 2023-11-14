@@ -150,7 +150,11 @@ infix operator .* : MultiplicationPrecedence
     get
   }
 }
-public func distanceBetween(_ a: NaurtSDK.Location2D, _ b: NaurtSDK.Location2D) -> Swift.Double
+@_inheritsConvenienceInitializers @objc public class Karney : ObjectiveC.NSObject {
+  @objc public func distanceBetween(_ a: NaurtSDK.Location2D, _ b: NaurtSDK.Location2D) -> Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
   case invalidJson = 0
   case maxRetries = 1

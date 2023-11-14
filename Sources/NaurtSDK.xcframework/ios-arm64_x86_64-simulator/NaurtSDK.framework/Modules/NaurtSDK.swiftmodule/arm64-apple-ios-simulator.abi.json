@@ -5862,38 +5862,137 @@
         "moduleName": "NaurtSDK"
       },
       {
-        "kind": "Function",
-        "name": "distanceBetween",
-        "printedName": "distanceBetween(_:_:)",
+        "kind": "TypeDecl",
+        "name": "Karney",
+        "printedName": "Karney",
         "children": [
           {
-            "kind": "TypeNominal",
-            "name": "Double",
-            "printedName": "Swift.Double",
-            "usr": "s:Sd"
+            "kind": "Function",
+            "name": "distanceBetween",
+            "printedName": "distanceBetween(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Location2D",
+                "printedName": "NaurtSDK.Location2D",
+                "usr": "c:@M@NaurtSDK@objc(cs)Location2D"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Location2D",
+                "printedName": "NaurtSDK.Location2D",
+                "usr": "c:@M@NaurtSDK@objc(cs)Location2D"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NaurtSDK@objc(cs)Karney(im)distanceBetween::",
+            "mangledName": "$s8NaurtSDK6KarneyC15distanceBetweenySdAA10Location2DC_AFtF",
+            "moduleName": "NaurtSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
-            "kind": "TypeNominal",
-            "name": "Location2D",
-            "printedName": "NaurtSDK.Location2D",
-            "usr": "c:@M@NaurtSDK@objc(cs)Location2D"
-          },
-          {
-            "kind": "TypeNominal",
-            "name": "Location2D",
-            "printedName": "NaurtSDK.Location2D",
-            "usr": "c:@M@NaurtSDK@objc(cs)Location2D"
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Karney",
+                "printedName": "NaurtSDK.Karney",
+                "usr": "c:@M@NaurtSDK@objc(cs)Karney"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NaurtSDK@objc(cs)Karney(im)init",
+            "mangledName": "$s8NaurtSDK6KarneyCACycfc",
+            "moduleName": "NaurtSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
           }
         ],
-        "declKind": "Func",
-        "usr": "s:8NaurtSDK15distanceBetweenySdAA10Location2DC_ADtF",
-        "mangledName": "$s8NaurtSDK15distanceBetweenySdAA10Location2DC_ADtF",
+        "declKind": "Class",
+        "usr": "c:@M@NaurtSDK@objc(cs)Karney",
+        "mangledName": "$s8NaurtSDK6KarneyC",
         "moduleName": "NaurtSDK",
         "declAttributes": [
           "AccessControl",
+          "ObjC",
           "RawDocComment"
         ],
-        "funcSelfKind": "NonMutating"
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -7992,28 +8091,28 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Anomaly.swift",
       "kind": "BooleanLiteral",
-      "offset": 2344,
+      "offset": 2377,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Anomaly.swift",
       "kind": "BooleanLiteral",
-      "offset": 2386,
+      "offset": 2419,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Anomaly.swift",
       "kind": "StringLiteral",
-      "offset": 3131,
+      "offset": 3164,
       "length": 15,
       "value": "\"NaurtSDK.TemporalAnomaly\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Anomaly.swift",
       "kind": "StringLiteral",
-      "offset": 4014,
+      "offset": 4047,
       "length": 14,
       "value": "\"NaurtSDK.SpatialAnomaly\""
     },
@@ -13088,77 +13187,77 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 2242,
+      "offset": 2297,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "FloatLiteral",
-      "offset": 2274,
+      "offset": 2329,
       "length": 5,
       "value": "100.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 2312,
+      "offset": 2367,
       "length": 16,
       "value": "\"naurt.deviceID\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "BooleanLiteral",
-      "offset": 3296,
+      "offset": 3351,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "BooleanLiteral",
-      "offset": 3914,
+      "offset": 3969,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 6029,
+      "offset": 6084,
       "length": 95,
       "value": "\"You can not use this method, as the user has requested no location access to this application\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 6244,
+      "offset": 6299,
       "length": 51,
       "value": "\"Attempting to update geofences when not validated\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 6974,
+      "offset": 7029,
       "length": 95,
       "value": "\"You can not use this method, as the user has requested no location access to this application\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 7189,
+      "offset": 7244,
       "length": 50,
       "value": "\"Attempting to update metadata when not validated\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 7374,
+      "offset": 7429,
       "length": 67,
       "value": "\"New metadata is identical to old metadata - nothing has been done\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "BooleanLiteral",
-      "offset": 7877,
+      "offset": 7932,
       "length": 4,
       "value": "true"
     },
@@ -13172,14 +13271,14 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "StringLiteral",
-      "offset": 15161,
+      "offset": 15212,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Naurt.swift",
       "kind": "IntegerLiteral",
-      "offset": 15249,
+      "offset": 15300,
       "length": 1,
       "value": "0"
     },
@@ -13522,42 +13621,42 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Geofence.swift",
       "kind": "Dictionary",
-      "offset": 539,
+      "offset": 569,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Geofence.swift",
       "kind": "StringLiteral",
-      "offset": 1409,
+      "offset": 1435,
       "length": 8,
       "value": "\"NaurtSDK.Geofence\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Geofence.swift",
       "kind": "IntegerLiteral",
-      "offset": 1805,
+      "offset": 1831,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Geofence.swift",
       "kind": "IntegerLiteral",
-      "offset": 1825,
+      "offset": 1851,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Geofence.swift",
       "kind": "IntegerLiteral",
-      "offset": 1805,
+      "offset": 1831,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Geofence.swift",
       "kind": "IntegerLiteral",
-      "offset": 1825,
+      "offset": 1851,
       "length": 1,
       "value": "1"
     },
@@ -16273,63 +16372,63 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 596,
+      "offset": 1030,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 676,
+      "offset": 1114,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 935,
+      "offset": 1401,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 1014,
+      "offset": 1480,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 1020,
+      "offset": 1486,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 1026,
+      "offset": 1492,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 1309,
+      "offset": 1803,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 1349,
+      "offset": 1843,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Utils\/Karney.swift",
       "kind": "FloatLiteral",
-      "offset": 1355,
+      "offset": 1849,
       "length": 3,
       "value": "0.5"
     },
