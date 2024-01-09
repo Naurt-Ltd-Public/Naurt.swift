@@ -6789,168 +6789,189 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 2023,
+      "offset": 1985,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 2122,
+      "offset": 2084,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 2284,
+      "offset": 2246,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 2417,
+      "offset": 2379,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 2472,
+      "offset": 2434,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 2526,
+      "offset": 2517,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
+      "kind": "StringLiteral",
+      "offset": 2572,
       "length": 5,
       "value": "\"PUT\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3418,
+      "offset": 3464,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 3439,
+      "offset": 3485,
       "length": 3,
       "value": "202"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 7458,
+      "offset": 7466,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 7557,
+      "offset": 7565,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 7719,
+      "offset": 7727,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 7852,
+      "offset": 7860,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 7907,
+      "offset": 7915,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 7961,
+      "offset": 7998,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
+      "kind": "StringLiteral",
+      "offset": 8053,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 8875,
+      "offset": 8967,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 8896,
+      "offset": 8988,
       "length": 3,
       "value": "202"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 11346,
+      "offset": 11400,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 11445,
+      "offset": 11499,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 11607,
+      "offset": 11661,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 11740,
+      "offset": 11794,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 11795,
+      "offset": 11849,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 11849,
+      "offset": 11932,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
+      "kind": "StringLiteral",
+      "offset": 11987,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 12746,
+      "offset": 12884,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "IntegerLiteral",
-      "offset": 12767,
+      "offset": 12905,
       "length": 3,
       "value": "202"
     },
@@ -6964,23 +6985,23 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 14337,
+      "offset": 14450,
       "length": 4,
-      "value": "\"V1\""
+      "value": "\"V2\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 14600,
+      "offset": 14693,
       "length": 4,
-      "value": "\"V1\""
+      "value": "\"V2\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/POIs\/POI.swift",
       "kind": "StringLiteral",
-      "offset": 14742,
+      "offset": 14808,
       "length": 4,
-      "value": "\"V1\""
+      "value": "\"V2\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/NaurtLocationProvider.swift",
@@ -8624,265 +8645,314 @@
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
       "offset": 192,
-      "length": 71,
-      "value": "\"https:\/\/dhg36vdisglcb4qwkj4wjzqsha0phlaz.lambda-url.eu-west-2.on.aws\/\""
+      "length": 34,
+      "value": "\"https:\/\/sdk.naurt.net\/validation\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 313,
-      "length": 71,
-      "value": "\"https:\/\/xoo52vtxc3mbgxjnz3mhs26bqe0xzmfe.lambda-url.eu-west-2.on.aws\/\""
+      "offset": 276,
+      "length": 33,
+      "value": "\"https:\/\/sdk.naurt.net\/presigned\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 428,
-      "length": 28,
-      "value": "\"https:\/\/api.naurt.net\/poi\/\""
+      "offset": 353,
+      "length": 30,
+      "value": "\"https:\/\/api.naurt.net\/v2poi\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 502,
-      "length": 71,
-      "value": "\"https:\/\/mzl4vartokbtx77o44fk2psqk40xbixd.lambda-url.eu-west-2.on.aws\/\""
+      "offset": 429,
+      "length": 33,
+      "value": "\"https:\/\/sdk.naurt.net\/ios_error\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 1235,
+      "offset": 1090,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 1290,
+      "offset": 1145,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 1336,
+      "offset": 1220,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1263,
+      "length": 6,
+      "value": "\"lite\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1291,
+      "length": 8,
+      "value": "\"Engine\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1392,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2240,
+      "offset": 2313,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2272,
+      "offset": 2345,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2375,
+      "offset": 2448,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2408,
+      "offset": 2481,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2466,
+      "offset": 2539,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2499,
+      "offset": 2572,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 3375,
+      "offset": 3448,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 3587,
+      "offset": 3660,
       "length": 22,
       "value": "\"_journey_dataV1.json\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4567,
+      "offset": 4640,
       "length": 3,
       "value": "400"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4588,
+      "offset": 4661,
       "length": 3,
       "value": "599"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 4744,
+      "offset": 4817,
       "length": 4,
       "value": "\"OK\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5523,
+      "offset": 5596,
       "length": 18,
       "value": "\"location_manager\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5568,
+      "offset": 5641,
       "length": 26,
       "value": "\"location_manager\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5593,
-      "length": 2,
+      "offset": 5666,
+      "length": 42,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5650,
+      "offset": 5763,
       "length": 20,
       "value": "\"naurt-ios-sdk-data\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5695,
+      "offset": 5808,
       "length": 17,
       "value": "\"application\/zip\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5739,
+      "offset": 5852,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5892,
+      "offset": 6005,
       "length": 33,
       "value": "\"application\/json; charset=utf-8\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5947,
+      "offset": 6060,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 5993,
+      "offset": 6135,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 6204,
+      "length": 12,
+      "value": "\"DeviceUUID\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 6244,
+      "length": 6,
+      "value": "\"lite\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 6272,
+      "length": 8,
+      "value": "\"Engine\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
+      "kind": "StringLiteral",
+      "offset": 6311,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7020,
+      "offset": 7338,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7026,
+      "offset": 7344,
       "length": 3,
       "value": "299"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7429,
+      "offset": 7747,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 7560,
+      "offset": 7878,
       "length": 3,
       "value": "202"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 8393,
+      "offset": 8703,
       "length": 5,
       "value": "\"PUT\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 8426,
+      "offset": 8737,
       "length": 17,
       "value": "\"application\/zip\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 8465,
+      "offset": 8776,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "StringLiteral",
-      "offset": 9757,
+      "offset": 10057,
       "length": 37,
       "value": "\"s3\\.(.+)\\.amazonaws\\.com\\\/(.+?)\\\/\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9907,
+      "offset": 10207,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10084,
+      "offset": 10384,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/UploadManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10256,
+      "offset": 10556,
       "length": 1,
       "value": "2"
     },
@@ -13313,65 +13383,86 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "StringLiteral",
-      "offset": 1340,
+      "offset": 1369,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
+      "kind": "StringLiteral",
+      "offset": 1412,
+      "length": 18,
+      "value": "\"location_manager\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
+      "kind": "StringLiteral",
+      "offset": 1452,
+      "length": 8,
+      "value": "\"Engine\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
+      "kind": "StringLiteral",
+      "offset": 1540,
+      "length": 12,
+      "value": "\"DeviceUUID\""
+    },
+    {
+      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
+      "kind": "StringLiteral",
+      "offset": 1584,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "IntegerLiteral",
-      "offset": 2048,
+      "offset": 2227,
       "length": 3,
       "value": "400"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "IntegerLiteral",
-      "offset": 2069,
+      "offset": 2248,
       "length": 3,
       "value": "599"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "IntegerLiteral",
-      "offset": 2158,
+      "offset": 2337,
       "length": 3,
-      "value": "209"
+      "value": "202"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "BooleanLiteral",
-      "offset": 2218,
+      "offset": 2397,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "BooleanLiteral",
-      "offset": 2242,
+      "offset": 2421,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "BooleanLiteral",
-      "offset": 2372,
+      "offset": 2551,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
       "kind": "BooleanLiteral",
-      "offset": 2396,
+      "offset": 2575,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Validation.swift",
-      "kind": "StringLiteral",
-      "offset": 2607,
-      "length": 18,
-      "value": "\"location_manager\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/SharedCode\/Model\/ModelWrapper.swift",
@@ -17387,210 +17478,210 @@
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 3552,
+      "offset": 3547,
       "length": 7,
       "value": "\"E2005\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 3789,
+      "offset": 3784,
       "length": 7,
       "value": "\"E2006\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 5449,
+      "offset": 5444,
       "length": 7,
       "value": "\"E2000\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 5860,
+      "offset": 5855,
       "length": 7,
       "value": "\"E2001\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 7008,
+      "offset": 7003,
       "length": 7,
       "value": "\"E2002\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 7137,
+      "offset": 7132,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 8341,
+      "offset": 8336,
       "length": 44,
       "value": "\"Attempting to request always authorisation\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 8477,
+      "offset": 8472,
       "length": 29,
       "value": "\"Could not write to log file\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 8712,
+      "offset": 8707,
       "length": 49,
       "value": "\"Attempting to request when in use authorisation\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 8853,
+      "offset": 8848,
       "length": 29,
       "value": "\"Could not write to log file\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 9616,
+      "offset": 9611,
       "length": 47,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 9631,
+      "offset": 9626,
       "length": 1,
       "value": "\": \""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 9662,
+      "offset": 9657,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10004,
+      "offset": 9999,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10465,
+      "offset": 10460,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10616,
+      "offset": 10611,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 10725,
+      "offset": 10720,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 11678,
+      "offset": 11673,
       "length": 59,
       "value": "\"Location Authorisation: \""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 11736,
+      "offset": 11731,
       "length": 25,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 11837,
+      "offset": 11832,
       "length": 29,
       "value": "\"Could not write to log line\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 12390,
+      "offset": 12385,
       "length": 58,
       "value": "\"Precision Authorization: \""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 12447,
+      "offset": 12442,
       "length": 25,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 12548,
+      "offset": 12543,
       "length": 29,
       "value": "\"Could not write to log line\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 13190,
+      "offset": 13185,
       "length": 23,
       "value": "\"Recieved Kill Command\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 13313,
+      "offset": 13308,
       "length": 29,
       "value": "\"Could not write to log line\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13387,
+      "offset": 13382,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13537,
+      "offset": 13532,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "BooleanLiteral",
-      "offset": 13859,
+      "offset": 13854,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 14096,
+      "offset": 14091,
       "length": 25,
       "value": "\"Recieved Unkill Command\""
     },
     {
       "filePath": "\/Users\/nathanielcurnick\/Documents\/naurt\/NaurtSDK\/NaurtSDK\/iOSSpecificCode\/Mediator.swift",
       "kind": "StringLiteral",
-      "offset": 14221,
+      "offset": 14216,
       "length": 29,
       "value": "\"Could not write to log line\""
     },

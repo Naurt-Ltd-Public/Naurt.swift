@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NaurtSDK-Swift.h</key>
 		<data>
-		tFlec8ESlLGLN+c5HBTMxS2eZMg=
+		8N3uP8HKaVO4dodAh0c7HV1z+wA=
 		</data>
 		<key>Headers/NaurtSDK.h</key>
 		<data>
@@ -14,27 +14,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YpOoefFSszzBzehVT+ahASqB6wg=
+		6VreHOK/LipaOGltlAQ51u2ghGY=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		WRTN4fEefBnM3CbKzOP0+w+8qcQ=
+		sCRWJXLlPiFAkxltg874Yf4j6JY=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		7rwy8abmJQBm7XJeHmSo1I1cNu0=
+		gXTKc0rsGwzNsm0dnCNrib8susc=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		0aaUOrm+dwkjgP+9sztqoE96OQE=
+		ihtetRDGbZ7VoTKSjlpmFuVA3Ag=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		7rwy8abmJQBm7XJeHmSo1I1cNu0=
+		gXTKc0rsGwzNsm0dnCNrib8susc=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		m9KYWrlE2OrWgpkEr7yWLpEwQNw=
+		JjbNsyBb36jZEACjaO9QKzV6ePk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/v9SXoxzt47encT5CnBTSgMmyw/DaiDmGsX96NjgTJI=
+			mTO3Wj3k8C1iWvYc1qveE2hK1zgnyMN25hhtns5cRJU=
 			</data>
 		</dict>
 		<key>Headers/NaurtSDK.h</key>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nBkJIKHiMt8O/x24VjH5Blb/zgHCVSOQjx9CoQmLME8=
+			TS+MlP1lduIRy3vIu3t+HJj+GRju2oBVjF326WC1Pok=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XtP64yJZ08fPJs8dBhCySrtWMhKodcP06pYSUCPaQOU=
+			u8hU5pZwfSzmomBQMdSRrvIlvbqYrM9oRGFt8g2TFIk=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R2WtzArCdUmYhk1JxdQH68oV+7u9+Jhw/u6OJsfmm20=
+			Pk6UrGJpwmN8ahejpZRQzoV8BvZ2wPRDr1cZnesOdz4=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XtP64yJZ08fPJs8dBhCySrtWMhKodcP06pYSUCPaQOU=
+			u8hU5pZwfSzmomBQMdSRrvIlvbqYrM9oRGFt8g2TFIk=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mGQ/pNK8dB3rBo/PLh8Ge5x/6h4FTdXmWHDccqfOo1Q=
+			p0UGFfPNa7hyiSR+w+MjO5DK81e1Q08V3nHPNp0AaZc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
