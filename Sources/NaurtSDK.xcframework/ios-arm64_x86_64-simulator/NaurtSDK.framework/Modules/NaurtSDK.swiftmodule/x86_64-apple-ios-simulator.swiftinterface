@@ -27,6 +27,25 @@ public struct AddressJson : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+@objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
+  case invalidJson = 0
+  case maxRetries = 1
+  case unknown = 2
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public enum Movement : Swift.Int {
   case Unknown = 0
   case Walking = 1
@@ -159,29 +178,13 @@ infix operator .* : MultiplicationPrecedence
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public enum PoiError : Swift.Int, Swift.Error, Foundation.LocalizedError {
-  case invalidJson = 0
-  case maxRetries = 1
-  case unknown = 2
-  public var errorUserInfo: [Swift.String : Any] {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public static var _nsErrorDomain: Swift.String {
-    get
-  }
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @objc public class MotionContainer : ObjectiveC.NSObject {
   public init(accel: (Swift.Double, Swift.Double, Swift.Double), gyro: (Swift.Double, Swift.Double, Swift.Double), mag: (Swift.Double, Swift.Double, Swift.Double)?, timeS: Swift.Double)
   @objc deinit
 }
+extension NaurtSDK.PoiError : Swift.Equatable {}
+extension NaurtSDK.PoiError : Swift.Hashable {}
+extension NaurtSDK.PoiError : Swift.RawRepresentable {}
 extension NaurtSDK.Movement : Swift.Equatable {}
 extension NaurtSDK.Movement : Swift.Hashable {}
 extension NaurtSDK.Movement : Swift.RawRepresentable {}
@@ -191,6 +194,3 @@ extension NaurtSDK.Source : Swift.RawRepresentable {}
 extension NaurtSDK.GeofenceActivityType : Swift.Equatable {}
 extension NaurtSDK.GeofenceActivityType : Swift.Hashable {}
 extension NaurtSDK.GeofenceActivityType : Swift.RawRepresentable {}
-extension NaurtSDK.PoiError : Swift.Equatable {}
-extension NaurtSDK.PoiError : Swift.Hashable {}
-extension NaurtSDK.PoiError : Swift.RawRepresentable {}
