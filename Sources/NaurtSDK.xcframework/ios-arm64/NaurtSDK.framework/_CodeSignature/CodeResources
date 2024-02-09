@@ -14,27 +14,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6VreHOK/LipaOGltlAQ51u2ghGY=
+		fu9W3w/+0qE4sR+YsIg9EiN75Os=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		sCRWJXLlPiFAkxltg874Yf4j6JY=
+		Fh165PZ9snsj9ah4v3i/RPyRO0E=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		gXTKc0rsGwzNsm0dnCNrib8susc=
+		5Y7f4qtD9AwqE2DyvJK1TylSKwQ=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ihtetRDGbZ7VoTKSjlpmFuVA3Ag=
+		laexuZIgvRQfsLKJ3x7LLg3mm0E=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		gXTKc0rsGwzNsm0dnCNrib8susc=
+		5Y7f4qtD9AwqE2DyvJK1TylSKwQ=
 		</data>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		JjbNsyBb36jZEACjaO9QKzV6ePk=
+		CWZdfE3DlJkHTyFWrdECMokleZ8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TS+MlP1lduIRy3vIu3t+HJj+GRju2oBVjF326WC1Pok=
+			e8clFR5uERZSfZ5uFupKFSbTSHazWw+pe4NlzrGLMQw=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u8hU5pZwfSzmomBQMdSRrvIlvbqYrM9oRGFt8g2TFIk=
+			mlunardgBKaWLPO6kid+0hu6L+NdqJxpeKkjXWpchD8=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pk6UrGJpwmN8ahejpZRQzoV8BvZ2wPRDr1cZnesOdz4=
+			dIXDnh0yBSAXBXcrEOSkCHuYRCoUig7piWRisUxNGKs=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u8hU5pZwfSzmomBQMdSRrvIlvbqYrM9oRGFt8g2TFIk=
+			mlunardgBKaWLPO6kid+0hu6L+NdqJxpeKkjXWpchD8=
 			</data>
 		</dict>
 		<key>Modules/NaurtSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p0UGFfPNa7hyiSR+w+MjO5DK81e1Q08V3nHPNp0AaZc=
+			ZsXHXAxRibpkilNwQybihv30jHsKz4whuNIuNhAjPlE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

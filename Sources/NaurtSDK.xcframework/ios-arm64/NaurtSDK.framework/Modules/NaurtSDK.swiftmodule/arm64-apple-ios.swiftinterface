@@ -18,10 +18,14 @@ import _SwiftConcurrencyShims
 import simd
 @objc public class POIManager : ObjectiveC.NSObject {
   public init(apiKey: Swift.String)
-  public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
-  public func getPoi(poiId: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String]?, metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func putPoi(latitude: Swift.Double, longitude: Swift.Double, poiType: Swift.String, metadata: Foundation.NSDictionary?, address_json: NaurtSDK.AddressJson?, address_string: Swift.String?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
+  public func getPoi(poiId: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?, poiTypes: [Swift.String]?, metadata: Foundation.NSDictionary?, distanceFilter: Swift.Double?, address_json: NaurtSDK.AddressJson?, address_string: Swift.String?, additional_results: Swift.Bool?, completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   public func deletePoi(poiIds: [Swift.String], completion: @escaping ([Swift.String : Any]?, Swift.Int?, NaurtSDK.PoiError?, Swift.String?) -> Swift.Void)
   @objc deinit
+}
+public struct AddressJson : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum Movement : Swift.Int {
   case Unknown = 0
